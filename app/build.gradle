@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+
+def AAVersion = '4.4.0'
+
+android {
+    compileSdkVersion 26
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = "${variant.getBuildType().name}_v${variant.versionName}.apk"
+                outputFileName = new File("../", fileName)
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias '1000'
+            keyPassword '123456'
+            storeFile file('C:/Users/Administrator/Desktop/flysand.jks')
+            storePassword '123456'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.aioute.carloan"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["resourcePackageName": android.defaultConfig.applicationId]
+            }
+        }
+
+        ndk {
+            // 选择要添加的对应cpu类型的.so库。还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: defaultConfig.applicationId,
+                JPUSH_APPKEY : "b5b0500f1621192be6de3aff", // JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", // 暂时填写默认值即可.
+                APP_ID       : "8a5b4b5c-4b44-494d-a374-cc8b04c67789",
+                URL          : "http://221.0.91.34:12080",
+        ]
+
+        multiDexEnabled true
+
+        dexOptions {
+            additionalParameters += '--set-max-idx-number=48000'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME: defaultConfig.applicationId + applicationIdSuffix,
+                    APP_ID       : "8a5b4b5c-4b44-494d-a374-cc8b04c67789",
+                    URL          : "http://221.0.91.34:12080",
+            ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+
+    implementation 'cn.jiguang.sdk:jpush:3.0.9'
+    implementation 'cn.jiguang.sdk:jcore:1.1.7'
+    implementation 'com.android.support:multidex:1.0.0'
+    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    debugImplementation 'com.sft:core-base:1.2.1-SNAPSHOT@aar'
+    releaseImplementation 'com.sft:core-base:1.1.0@aar'
+}
