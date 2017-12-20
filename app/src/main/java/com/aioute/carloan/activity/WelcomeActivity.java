@@ -21,7 +21,7 @@ public class WelcomeActivity extends CustomBaseActivity {
     ImageView imageView;
 
     @Override
-    protected void afterViews(){
+    protected void afterViews() {
         toolbar.setTitleTextColor(Color.parseColor("#000000"));
         imageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
     }
@@ -31,4 +31,5 @@ public class WelcomeActivity extends CustomBaseActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 }

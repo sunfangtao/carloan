@@ -2,12 +2,27 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="BaseAppTheme">
-        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:textSize">22sp</item>
-        <item name="actionMenuTextColor">@color/white</item>
+    <!--<style name="OverflowMenuStyle" parent="BaseOverflowMenuStyle">-->
+        <!--&lt;!&ndash; 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar &ndash;&gt;-->
+        <!--<item name="android:dropDownVerticalOffset">@dimen/dropDownVerticalOffset</item>-->
+    <!--</style>-->
+
+    <style name="Toolbar.TitleText" parent="BaseToolbar.TitleText">
+        <item name="android:textSize">28sp</item>
+        <item name="android:color">@color/colorAccent</item>
+    </style>
+
+    <style name="Toolbar.PopupOverlay" parent="BaseToolbar.PopupOverlay">
+        <!--<item name="android:textSize">28sp</item>-->
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Toolbar.AppBarOverlay" parent="BaseToolbar.AppBarOverlay">
+        <item name="android:textSize">14sp</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item>
     </style>
 
 </resources>

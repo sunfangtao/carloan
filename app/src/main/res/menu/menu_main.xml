@@ -6,7 +6,7 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="测试"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_settings2"
         android:orderInCategory="100"
