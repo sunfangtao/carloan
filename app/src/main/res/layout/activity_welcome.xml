@@ -21,13 +21,21 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
+    <cn.sft.view.AlwaysMarqueeTextView
         android:id="@+id/checkBox"
+        android:background="#000000"
+        android:gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="CheckBox"
+        app:drawableTextCenter="true"
+        app:drawableWidth="20dp"
+        app:drawableHeight="20dp"
+        app:drawableTextRepeat="true"
+        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:drawableRight="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
