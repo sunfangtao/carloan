@@ -1,6 +1,5 @@
 package com.aioute.carloan.activity;
 
-import android.graphics.Color;
 import android.view.Menu;
 import android.widget.ImageView;
 
@@ -22,7 +21,6 @@ public class WelcomeActivity extends CustomBaseActivity {
 
     @Override
     protected void afterViews() {
-        toolbar.setTitleTextColor(Color.parseColor("#000000"));
         imageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
     }
 

@@ -3,5 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="activityBackground">#DDDDDD</color>
+    <!--<color name="activityBackground">#FF0000</color>-->
+    <!--<color name="toolbarColorTitle">#000000</color>-->
+    <!--<color name="toolbarColorMenu">#000000</color>-->
+    <!--<color name="toolbarColorPopupMenu">#000000</color>-->
 </resources>

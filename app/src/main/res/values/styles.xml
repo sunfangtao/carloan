@@ -2,7 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="BaseAppTheme">
-        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <!--<style name="OverflowMenuStyle" parent="BaseOverflowMenuStyle">-->
@@ -10,19 +9,19 @@
         <!--<item name="android:dropDownVerticalOffset">@dimen/dropDownVerticalOffset</item>-->
     <!--</style>-->
 
-    <style name="Toolbar.TitleText" parent="BaseToolbar.TitleText">
-        <item name="android:textSize">28sp</item>
-        <item name="android:color">@color/colorAccent</item>
-    </style>
-
-    <style name="Toolbar.PopupOverlay" parent="BaseToolbar.PopupOverlay">
+    <!--<style name="Toolbar.TitleText" parent="BaseToolbar.TitleText">-->
         <!--<item name="android:textSize">28sp</item>-->
-        <item name="android:textColor">@color/colorAccent</item>
-    </style>
+        <!--<item name="android:textColor">@color/gray</item>-->
+    <!--</style>-->
 
-    <style name="Toolbar.AppBarOverlay" parent="BaseToolbar.AppBarOverlay">
-        <item name="android:textSize">14sp</item>
-        <item name="actionMenuTextColor">@color/colorAccent</item>
-    </style>
+    <!--<style name="Toolbar.PopupOverlay" parent="BaseToolbar.PopupOverlay">-->
+        <!--<item name="android:textSize">28sp</item>-->
+        <!--<item name="android:textColor">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <!--<style name="Toolbar.AppBarOverlay" parent="BaseToolbar.AppBarOverlay">-->
+        <!--<item name="android:textSize">14sp</item>-->
+        <!--<item name="actionMenuTextColor">@color/colorAccent</item>-->
+    <!--</style>-->
 
 </resources>
