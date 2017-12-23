@@ -9,7 +9,8 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/main_devicecount_layout"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="124dp"
+        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="28dp"
             android:gravity="center"
             android:minWidth="80dp"
             android:padding="5dp"
@@ -35,7 +36,7 @@
             android:id="@+id/main_devicetypecount_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="28dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:textColor="@color/colorWhiteText"
@@ -48,20 +49,126 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <cn.sft.view.BadgeTextView
-        android:id="@+id/main_count_tv"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginTop="168dp"
-        app:badge_showBadge="true"
-        app:badge_textColor="@color/gray"
-        app:badge_badgeTextSize="13sp"
-        app:badge_textSize="30sp"
-        app:badge_text="asdfasdf"
-        app:badge_imPadding="0dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/main_devicecount_layout">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/main_function_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    style="@style/Main_Progress_TextView"
+                    android:text="离线三天以上（有线）" />
+
+                <ProgressBar
+                    android:id="@+id/main_offline_pb"
+                    style="@style/Main_Progress_Bar" />
+
+                <TextView
+                    android:id="@+id/main_offline_tv"
+                    style="@style/Main_Progress_TextView"
+                    tools:text="@string/device_type_percent_count" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/mainProgressLayoutDeviderHeight"
+                    android:background="@color/colorGray" />
+
+                <TextView
+                    style="@style/Main_Progress_TextView"
+                    android:text="两天以上未行驶（有线）" />
+
+                <ProgressBar
+                    android:id="@+id/main_notravel_pb"
+                    style="@style/Main_Progress_Bar" />
+
+                <TextView
+                    android:id="@+id/main_notravel_tv"
+                    style="@style/Main_Progress_TextView"
+                    tools:text="@string/device_type_percent_count" />
+            </LinearLayout>
+
+            <cn.sft.view.AlwaysMarqueeTextView
+                android:id="@+id/main_warn_carcount_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="adsfadsf" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    style="@style/Main_Progress_TextView"
+                    android:text="断电报警" />
+
+                <ProgressBar
+                    android:id="@+id/main_electric_pb"
+                    style="@style/Main_Progress_Bar" />
+
+                <TextView
+                    android:id="@+id/main_electric_tv"
+                    style="@style/Main_Progress_TextView"
+                    tools:text="@string/device_type_percent_count" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/mainProgressLayoutDeviderHeight"
+                    android:background="@color/colorGray" />
+
+                <TextView
+                    style="@style/Main_Progress_TextView"
+                    android:text="电子围栏报警" />
+
+                <ProgressBar
+                    android:id="@+id/main_rail_pb"
+                    style="@style/Main_Progress_Bar" />
+
+                <TextView
+                    android:id="@+id/main_rail_tv"
+                    style="@style/Main_Progress_TextView"
+                    tools:text="@string/device_type_percent_count" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

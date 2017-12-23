@@ -3,4 +3,6 @@
     <!--<dimen name="toolbarTitleTextSize">28sp</dimen>-->
     <!--<dimen name="toolbarMenuTextSize">28sp</dimen>-->
     <!--<dimen name="toolbarPopupMenuTextSize">28dp</dimen>-->
+
+    <dimen name="mainProgressLayoutDeviderHeight">10dp</dimen>
 </resources>

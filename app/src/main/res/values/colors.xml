@@ -9,4 +9,10 @@
     <!--<color name="toolbarColorPopupMenu">#000000</color>-->
 
     <color name="colorWhiteText">#FFFFFF</color>
+    <color name="colorGrayText">#666666</color>
+    <color name="colorBlackText">#333333</color>
+    <!--========================================-->
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDeepGray">#666666</color>
+    <color name="colorGray">#D7D7D7</color>
 </resources>

@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity_" />
+        <activity android:name=".activity.SettingActivity_" />
         <activity android:name=".base.CustomBaseActivity_" />
 
         <meta-data

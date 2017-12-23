@@ -2,4 +2,14 @@
     <string name="app_name">Carloan</string>
     <string name="default_fill">默认填充</string>
     <string name="device_type_count">全部(total) |在线(online) |离线(offline) |报警(alarm)</string>
+    <string name="device_list">设备列表</string>
+    <string name="appointment_unpack">预约拆机</string>
+    <string name="warn_info">报警信息</string>
+    <string name="onsite_photo">现场拍照</string>
+    <string name="my_tasks">我的任务</string>
+    <string name="coming_soon">敬请期待</string>
+    <string name="device_type_percent_count">percent&#160;&#160;&#160;&#160;count辆</string>
+    <string name="car_warn_count">&lt;customfont size=&#39;13sp&#39; color=&#39;#00a65a&#39;&gt;count&lt;/customfont&gt;&lt;br&gt;&lt;customfont size=&#39;10sp&#39; color=&#39;#ff005a&#39;&gt;报警车辆&lt;/customfont&gt;</string>
+    <string name="base_setting">基本设置</string>
+
 </resources>
