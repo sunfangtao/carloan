@@ -7,6 +7,7 @@ package com.aioute.carloan.common;
 public class Contant {
 
     public static String IP_PORT = VarConstant.IP_PORT;
+    public static int PASSWORD_MIN_LENGTH = 4;
 
     public static final class HttpType {
         // public static final String LOGIN_TYPE = "logintype";

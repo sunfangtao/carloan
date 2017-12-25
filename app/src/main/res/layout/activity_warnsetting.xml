@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/warnsetting_ck"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@color/colorGray"
+        android:textColor="@color/colorWhiteText"
+        android:text="@string/warnsetting_receiver" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/warnsetting_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray" />
+
+</LinearLayout>

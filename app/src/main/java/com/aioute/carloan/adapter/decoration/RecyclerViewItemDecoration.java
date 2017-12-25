@@ -23,25 +23,36 @@ public class RecyclerViewItemDecoration extends RecyclerView.ItemDecoration {
 
         int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
 
-        if (index < spanCount) {
-            // 第一行
-            outRect.top = space;
-        } else {
-            outRect.top = 0;
-        }
-        outRect.bottom = space;
+        if (spanCount > 1) {
+            if (index < spanCount) {
+                // 第一行
+                outRect.top = space;
+            } else {
+                outRect.top = 0;
+            }
+            outRect.bottom = space;
 
-        if (index % spanCount == 0) {
-            // 第一列
-            outRect.left = space;
-            outRect.right = space / 2;
-        } else if (index % spanCount == spanCount - 1) {
-            // 最后一列
-            outRect.left = space / 2;
-            outRect.right = space;
+            if (index % spanCount == 0) {
+                // 第一列
+                outRect.left = space;
+                outRect.right = space / 2;
+            } else if (index % spanCount == spanCount - 1) {
+                // 最后一列
+                outRect.left = space / 2;
+                outRect.right = space;
+            } else {
+                outRect.left = space / 2;
+                outRect.right = space / 2;
+            }
         } else {
-            outRect.left = space / 2;
-            outRect.right = space / 2;
+            if (index == 0) {
+                outRect.top = space;
+            } else {
+                outRect.top = 0;
+            }
+            outRect.bottom = space;
+            outRect.left = 0;
+            outRect.right = 0;
         }
     }
 }

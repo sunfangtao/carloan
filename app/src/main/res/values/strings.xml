@@ -1,15 +1,51 @@
 <resources>
     <string name="app_name">Carloan</string>
     <string name="default_fill">默认填充</string>
-    <string name="device_type_count">全部(total) |在线(online) |离线(offline) |报警(alarm)</string>
+    <string name="device_type_count">全部(%1$d) |在线(%2$d) |离线(%3$d) |报警(%4$d)</string>
     <string name="device_list">设备列表</string>
     <string name="appointment_unpack">预约拆机</string>
     <string name="warn_info">报警信息</string>
     <string name="onsite_photo">现场拍照</string>
     <string name="my_tasks">我的任务</string>
     <string name="coming_soon">敬请期待</string>
-    <string name="device_type_percent_count">percent&#160;&#160;&#160;&#160;count辆</string>
-    <string name="car_warn_count">&lt;customfont size=&#39;13sp&#39; color=&#39;#00a65a&#39;&gt;count&lt;/customfont&gt;&lt;br&gt;&lt;customfont size=&#39;10sp&#39; color=&#39;#ff005a&#39;&gt;报警车辆&lt;/customfont&gt;</string>
+    <string name="device_type_percent_count">%1$d%%&#160;&#160;&#160;&#160;%2$d辆</string>
     <string name="base_setting">基本设置</string>
+    <string name="monitor_refresh_time">监控刷新时间</string>
+    <string name="trace_refresh_time">追踪刷新时间</string>
+    <string name="warn_info_setting">报警信息设置</string>
+    <string name="fix_password">修改密码</string>
+    <string name="ori_password">原始密码</string>
+    <string name="input_ori_password">请输入原始密码</string>
+    <string name="new_password">新设密码</string>
+    <string name="input_new_password">请输入新设密码</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="input_confirm_password">请输入确认密码</string>
+    <string name="confirm_fix">确认修改</string>
+    <string name="warnsetting_receiver">(全选)设置接收报警消息类型</string>
+
+    <string-array name="setting_refresh_time">
+        <item>10秒</item>
+        <item>30秒</item>
+        <item>1分钟</item>
+        <item>3分钟</item>
+        <item>5分钟</item>
+    </string-array>
+
+    <string-array name="warn_style_array">
+        <item>低点报警</item>
+        <item>断电报警</item>
+        <item>超速报警</item>
+        <item>离省报警</item>
+        <item>围栏报警</item>
+        <item>上线报警</item>
+        <item>行驶报警</item>
+        <item>停车报警</item>
+        <item>开盖报警</item>
+        <item>拆机报警</item>
+        <item>屏蔽报警</item>
+        <item>字母报警</item>
+        <item>剪线报警</item>
+        <item>关机报警</item>
+    </string-array>
 
 </resources>

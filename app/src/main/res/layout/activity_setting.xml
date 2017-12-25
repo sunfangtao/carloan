@@ -15,7 +15,36 @@
         android:textSize="15sp" />
 
     <cn.sft.view.AlwaysMarqueeTextView
-        android:id="@+id/text"
+        android:id="@+id/settting_monitor_tv"
         style="@style/Setting_TextView" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/settting_trace_tv"
+        style="@style/Setting_TextView" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/settting_warn_tv"
+        style="@style/Setting_TextView"
+        android:text="@string/warn_info_setting" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/settting_fixpass_tv"
+        style="@style/Setting_TextView"
+        android:text="@string/fix_password" />
 
 </LinearLayout>

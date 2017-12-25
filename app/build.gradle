@@ -90,6 +90,6 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.0'
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     api "org.androidannotations:androidannotations-api:$AAVersion"
-    debugImplementation 'com.sft:core-base:1.2.18-SNAPSHOT@aar'
+    debugImplementation 'com.sft:core-base:1.2.20.1-SNAPSHOT@aar'
     releaseImplementation 'com.sft:core-base:1.1.0@aar'
 }

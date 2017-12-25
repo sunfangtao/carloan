@@ -8,6 +8,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.ArcShape;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import cn.sft.base.adapter.BaseAdapter;
 import cn.sft.listener.RecyclerViewItemClickListener;
 import cn.sft.taghandler.FontSizeTagHandler;
+import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
 import cn.sft.view.AlwaysMarqueeTextView;
 
@@ -73,7 +75,6 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
     @ViewById(R.id.main_rail_tv)
     TextView railTV;
     //------------------------------------------------------------
-    // 功能块数据，Adapter显示
     ArrayList<MainFunctionModel> mainFunctionModelList;
 
     @Override
@@ -83,6 +84,13 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
         updateDeviceTypeCount(8, 4, 3, 8);
 
         initUI();
+
+        new MyHandler(2000){
+            @Override
+            public void run() {
+                updateWarnBadge("20");
+            }
+        };
     }
 
     void initUI() {
@@ -107,11 +115,11 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
         GridLayoutManager layoutManager = new GridLayoutManager(this, spanCount);
         mainFunctionRV.setLayoutManager(layoutManager);
 
-        int deviderWidthPx = Util.dp2px(this, 2);
-        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(deviderWidthPx);
+        int deviderPx = Util.dp2px(this, 2);
+        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(deviderPx);
         mainFunctionRV.addItemDecoration(decoration);
 
-        int viewHeight = (getResources().getDisplayMetrics().widthPixels - spanCount * deviderWidthPx) / spanCount;
+        int viewHeight = (getResources().getDisplayMetrics().widthPixels - spanCount * deviderPx) / spanCount;
         MainFunctionAdapter mAdapter = new MainFunctionAdapter(this, mainFunctionModelList = new ArrayList<>(), viewHeight);
         mainFunctionRV.setAdapter(mAdapter);
 
@@ -263,11 +271,7 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
         if (online + offline > total || alarm > total) {
             throw new IllegalArgumentException("设备数量参数错误！");
         }
-        deviceTypeCountTV.setText(getString(R.string.device_type_count)
-                .replace("total", total + "")
-                .replace("online", online + "")
-                .replace("offline", offline + "")
-                .replace("alarm", alarm + ""));
+        deviceTypeCountTV.setText(String.format(getString(R.string.device_type_count), total, online, offline, alarm));
     }
 
     /**
@@ -307,10 +311,7 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
             throw new IllegalArgumentException("车数量参数错误！");
         }
         offlinePB.setProgress(total == 0 ? 0 : (int) (offlineCount * 100f / total));
-        offlineTV.setText(getString(R.string.device_type_percent_count)
-                .replace("percent", offlinePB.getProgress() + "%")
-                .replace("count", offlineCount + "")
-        );
+        offlineTV.setText(String.format(getString(R.string.device_type_percent_count), offlinePB.getProgress(), offlineCount));
     }
 
     /**
@@ -324,10 +325,7 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
             throw new IllegalArgumentException("车数量参数错误！");
         }
         noTravelPB.setProgress(total == 0 ? 0 : (int) (noTravelCount * 100f / total));
-        noTravelTV.setText(getString(R.string.device_type_percent_count)
-                .replace("percent", noTravelPB.getProgress() + "%")
-                .replace("count", noTravelCount + "")
-        );
+        noTravelTV.setText(String.format(getString(R.string.device_type_percent_count), noTravelPB.getProgress(), noTravelCount));
     }
 
     /**
@@ -341,10 +339,7 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
             throw new IllegalArgumentException("车数量参数错误！");
         }
         electricPB.setProgress(total == 0 ? 0 : (int) (electricCount * 100f / total));
-        electricTV.setText(getString(R.string.device_type_percent_count)
-                .replace("percent", electricPB.getProgress() + "%")
-                .replace("count", electricCount + "")
-        );
+        electricTV.setText(String.format(getString(R.string.device_type_percent_count), electricPB.getProgress(), electricCount));
     }
 
     /**
@@ -358,14 +353,16 @@ public class MainActivity extends CustomBaseActivity implements RecyclerViewItem
             throw new IllegalArgumentException("车数量参数错误！");
         }
         railPB.setProgress(total == 0 ? 0 : (int) (railWarnCount * 100f / total));
-        railTV.setText(getString(R.string.device_type_percent_count)
-                .replace("percent", railPB.getProgress() + "%")
-                .replace("count", railWarnCount + "")
-        );
+        railTV.setText(String.format(getString(R.string.device_type_percent_count), railPB.getProgress(), railWarnCount));
     }
 
     @Override
     public void onRecyclerViewItemClick(BaseAdapter baseAdapter, View view, int index) {
         SettingActivity_.intent(MainActivity.this).start();
+    }
+
+    @Override
+    protected void afterRestoreInstanceState(Bundle bundle) {
+        mainFunctionRV.getAdapter().notifyDataSetChanged();
     }
 }
