@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/my_account_tv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:textColor="@color/colorWhiteText"
+        android:textSize="14sp"
+        app:drawableHeight="70dp"
+        android:drawablePadding="10dp"
+        android:background="@color/colorAccent"
+        app:drawableWidth="70dp" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/my_aboutus_tv"
+        style="@style/My_TextView"
+        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:drawableRight="@mipmap/ic_launcher_round"
+        android:text="@string/aboutus" />
+
+    <include layout="@layout/devider_gray_match" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/my_setting_tv"
+        style="@style/My_TextView"
+        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:drawableRight="@mipmap/ic_launcher_round"
+        android:text="@string/setting" />
+
+    <include layout="@layout/devider_gray_match" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/my_phone_tv"
+        style="@style/My_TextView"
+        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:drawableRight="@mipmap/ic_launcher_round"
+        android:text="@string/change_phone" />
+
+    <include layout="@layout/devider_gray_match" />
+
+    <Button
+        android:id="@+id/my_exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/activity_padding_leftright"
+        android:layout_marginRight="@dimen/activity_padding_leftright"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        android:text="@string/exit" />
+
+</LinearLayout>

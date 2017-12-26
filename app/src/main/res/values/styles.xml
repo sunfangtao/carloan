@@ -88,4 +88,30 @@
         <item name="android:background">@color/colorWhite</item>
     </style>
 
+    <style name="Main_RadioButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/colorWhiteText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="drawableHeight">20dp</item>
+        <item name="drawableWidth">20dp</item>
+        <item name="drawableTextCenter">true</item>
+    </style>
+
+    <style name="My_TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/colorBlackText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="leftDrawableHeight">20dp</item>
+        <item name="leftDrawableWidth">20dp</item>
+        <item name="rightDrawableHeight">20dp</item>
+        <item name="rightDrawableWidth">20dp</item>
+        <item name="android:paddingLeft">@dimen/activity_padding_leftright</item>
+        <item name="android:paddingRight">@dimen/activity_padding_leftright</item>
+    </style>
 </resources>

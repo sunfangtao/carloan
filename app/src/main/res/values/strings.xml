@@ -22,6 +22,13 @@
     <string name="input_confirm_password">请输入确认密码</string>
     <string name="confirm_fix">确认修改</string>
     <string name="warnsetting_receiver">(全选)设置接收报警消息类型</string>
+    <string name="main_page">首页</string>
+    <string name="monitor">监控</string>
+    <string name="my">我的</string>
+    <string name="aboutus">关于我们</string>
+    <string name="setting">设置</string>
+    <string name="change_phone">更改手机号</string>
+    <string name="exit">退出</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

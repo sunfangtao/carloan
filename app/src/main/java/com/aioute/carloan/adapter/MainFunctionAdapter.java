@@ -10,14 +10,15 @@ import com.aioute.carloan.bean.model.MainFunctionModel;
 import java.util.List;
 
 import cn.sft.base.adapter.BaseAdapter;
+import cn.sft.base.fragment.BaseFragment;
 import cn.sft.view.BadgeTextView;
 
 public class MainFunctionAdapter extends BaseAdapter {
 
     int viewHeight;
 
-    public MainFunctionAdapter(Context context, List<MainFunctionModel> list, int viewHeight) {
-        super(context, list);
+    public MainFunctionAdapter(Context context, BaseFragment fragment, List<MainFunctionModel> list, int viewHeight) {
+        super(context, fragment, list);
         this.viewHeight = viewHeight;
     }
 

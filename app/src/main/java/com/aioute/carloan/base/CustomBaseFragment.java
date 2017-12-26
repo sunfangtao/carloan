@@ -14,6 +14,5 @@ public class CustomBaseFragment extends BaseFragment {
 
     @AfterViews
     protected void afterViews() {
-
     }
 }
