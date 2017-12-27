@@ -24,4 +24,11 @@ public class Contant {
     public static final class ShareKey {
         // public static final String LAST_LOGIN_USER_ACCOUND = "lastLoginUserAccount";
     }
+
+    public static final class BroadcastKey {
+        public static final String TASK_ITEM_PHOTO = "taskItemPhoto";
+        public static final String TASK_ITEM_NAV = "taskItemNav";
+        public static final String POSITION = "position";
+        public static final String BEAN = "bean";
+    }
 }

@@ -36,6 +36,8 @@
     <string name="intpu_auth_code">请输入验证码</string>
     <string name="obtain_auth_code">获取验证码</string>
     <string name="bind">立即绑定</string>
+    <string name="sender">发送人：%1$s</string>
+    <string name="plate">车牌号：%1$s</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

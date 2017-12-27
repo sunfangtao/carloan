@@ -28,7 +28,7 @@ import cn.sft.view.DefaultNullRecyclerView;
 public class TaskInProressFragment extends CustomBaseFragment {
 
     //未完成的任务
-    private List<TaskBean> taskList;
+    protected List<TaskBean> taskList;
 
     @Nullable
     @Override
@@ -40,21 +40,61 @@ public class TaskInProressFragment extends CustomBaseFragment {
     @Override
     protected void afterViews() {
         TaskAdapter adapter = new TaskAdapter(getActivity(), this, taskList = new ArrayList<>());
-        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(Util.dp2px(getActivity(), 5));
+        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(Util.dp2px(getActivity(), 10));
         DefaultNullRecyclerView recyclerView = (DefaultNullRecyclerView) getView();
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(decoration);
-
-        getInProgressTask();
-        adapter.notifyDataSetChanged();
     }
 
-    void getInProgressTask() {
+    @Override
+    protected void noSaveInstanceStateForCreate() {
+        getTask();
+        notifyDataSetChanged();
+    }
+
+    /**
+     * 删除指定位置的item（用于完成拍照后从未拍照列表删除）
+     *
+     * @param position
+     */
+    public void removeItemForFinishPhoto(int position) {
+        if (position < 0 || position > taskList.size() - 1) {
+            throw new IllegalArgumentException("position 越界");
+        }
+        taskList.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    /**
+     * 刷新Adapter
+     */
+    void notifyDataSetChanged() {
+        ((DefaultNullRecyclerView) getView()).getAdapter().notifyDataSetChanged();
+    }
+
+    /**
+     * 删除Adapter指定item
+     */
+    void notifyItemRemoved(int position) {
+        ((DefaultNullRecyclerView) getView()).getAdapter().notifyItemRemoved(position);
+    }
+
+
+    void getTask() {
         TaskBean taskBean = new TaskBean();
         taskList.add(taskBean);
         taskBean = new TaskBean();
         taskList.add(taskBean);
         taskBean = new TaskBean();
         taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
     }
+
 }

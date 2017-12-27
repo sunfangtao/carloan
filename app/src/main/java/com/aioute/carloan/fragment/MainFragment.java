@@ -14,7 +14,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aioute.carloan.R;
-import com.aioute.carloan.activity.SettingActivity_;
 import com.aioute.carloan.activity.TaskActivity_;
 import com.aioute.carloan.adapter.MainFunctionAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
@@ -319,7 +318,6 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
 
     @Override
     public void onRecyclerViewItemClick(BaseAdapter baseAdapter, View view, int index) {
-        SettingActivity_.intent(getActivity()).start();
         switch (index) {
             case 0:
                 break;
