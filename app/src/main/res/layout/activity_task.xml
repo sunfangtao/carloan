@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.MainActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <RadioGroup
+        android:id="@+id/task_rg"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/task_inprogress_rb"
+            style="@style/Task_RadioBUtton"
+            android:text="@string/default_fill" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/task_finish_rb"
+            style="@style/Task_RadioBUtton"
+            android:text="@string/default_fill" />
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/task_contain_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+</LinearLayout>

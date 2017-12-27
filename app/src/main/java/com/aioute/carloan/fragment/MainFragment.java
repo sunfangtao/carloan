@@ -1,29 +1,26 @@
 package com.aioute.carloan.fragment;
 
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.ArcShape;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aioute.carloan.R;
 import com.aioute.carloan.activity.SettingActivity_;
+import com.aioute.carloan.activity.TaskActivity_;
 import com.aioute.carloan.adapter.MainFunctionAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
 import com.aioute.carloan.base.CustomBaseFragment;
 import com.aioute.carloan.bean.model.MainFunctionModel;
+import com.aioute.carloan.view.WarnCarCountTextView;
 
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
@@ -32,9 +29,8 @@ import java.util.ArrayList;
 
 import cn.sft.base.adapter.BaseAdapter;
 import cn.sft.listener.RecyclerViewItemClickListener;
-import cn.sft.taghandler.FontSizeTagHandler;
+import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
-import cn.sft.view.AlwaysMarqueeTextView;
 
 /**
  * Created by Administrator on 2017/12/25.
@@ -55,7 +51,7 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
     RecyclerView mainFunctionRV;
     // 报警车辆数量
     @ViewById(R.id.main_warn_carcount_tv)
-    AlwaysMarqueeTextView carCountTV;
+    WarnCarCountTextView carCountTV;
     // 离线三天以上（有线）
     @ViewById(R.id.main_offline_pb)
     ProgressBar offlinePB;
@@ -81,7 +77,6 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
 
     @Override
     protected void afterViews() {
-        super.afterViews();
         departmentTV.setText("测试");
         updateDeviceTypeCount(0, 0, 0, 0);
 
@@ -99,6 +94,17 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
         initMainFunctionUI();
         initMainProgressUI();
         initMainCarCountUI();
+
+        new MyHandler(5000) {
+            @Override
+            public void run() {
+                updateWarnBadge("20");
+                updateBrokeElectricPBAndValue(10, 50);
+                updateDeviceTypeCount(100, 20, 50, 30);
+                updateNoTravelPBAndValue(20, 80);
+                updateWarnCarCount(50, 160);
+            }
+        };
     }
 
     /**
@@ -200,17 +206,7 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
      * 初始化报警车辆数据，不在此更新数量
      */
     void initMainCarCountUI() {
-
-        // 宽高变为1:1
-        carCountTV.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                carCountTV.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                carCountTV.setHeight(carCountTV.getWidth());
-            }
-        });
-
-        updateWarnCarCount(1, 3);
+        updateWarnCarCount(0, 0);
     }
 
     /**
@@ -220,37 +216,7 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
      * @param total 车总数量
      */
     void updateWarnCarCount(int count, int total) {
-        if (count < 0 || total <= 0) {
-            throw new IllegalArgumentException("数量错误！");
-        }
-
-        int outerWidth = Util.dp2px(getActivity(), 2);
-        int innerWidth = Util.dp2px(getActivity(), 15) + outerWidth;
-
-        GradientDrawable drawable1 = new GradientDrawable();
-        drawable1.setColor(getResources().getColor(R.color.colorAccent));
-        drawable1.setStroke(outerWidth, getResources().getColor(R.color.colorGray));
-        drawable1.setShape(GradientDrawable.OVAL);
-
-        ArcShape arcShape = new ArcShape(-90, 360f * count / total);
-        ShapeDrawable drawable2 = new ShapeDrawable(arcShape);
-        drawable2.getPaint().setColor(getResources().getColor(R.color.colorPrimary));
-        drawable2.getPaint().setStyle(Paint.Style.FILL);
-        drawable2.setPadding(outerWidth, outerWidth, outerWidth, outerWidth);
-
-        GradientDrawable drawable3 = new GradientDrawable();
-        drawable3.setColor(getResources().getColor(R.color.colorWhite));
-        drawable3.setStroke(outerWidth, getResources().getColor(R.color.colorGray));
-        drawable3.setShape(GradientDrawable.OVAL);
-
-        LayerDrawable ld = new LayerDrawable(new Drawable[]{drawable1, drawable2, drawable3});
-        ld.setLayerInset(1, outerWidth, outerWidth, outerWidth, outerWidth);
-        ld.setLayerInset(2, innerWidth, innerWidth, innerWidth, innerWidth);
-        carCountTV.setBackgroundDrawable(ld);
-
-        String text = "<customfont size='20sp' color='#00a65a'>" + count
-                + "</customfont><br><customfont size='10sp' color='#666666'>报警车辆</customfont>";
-        carCountTV.setHtmlText(text, new FontSizeTagHandler(getActivity()));
+        carCountTV.setCount(count, total);
     }
 
     /**
@@ -354,6 +320,20 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
     @Override
     public void onRecyclerViewItemClick(BaseAdapter baseAdapter, View view, int index) {
         SettingActivity_.intent(getActivity()).start();
+        switch (index) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                // 我的任务
+                TaskActivity_.intent(getActivity()).start();
+                break;
+        }
     }
 
     @Override
@@ -371,8 +351,4 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
         // TODO 快速切换是否控制，防止重复操作
     }
 
-    @Override
-    protected void afterRestoreInstanceState(Bundle bundle) {
-
-    }
 }

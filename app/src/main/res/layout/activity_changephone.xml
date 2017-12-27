@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.ChangePhoneActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/changephone_phone_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawablePadding="20dp"
+        android:drawableTop="@mipmap/ic_launcher_round"
+        android:text="@string/default_fill"
+        android:textSize="14sp"
+        android:gravity="center_horizontal"
+        app:drawableHeight="150dp"
+        app:drawableWidth="100dp" />
+
+    <Button
+        android:id="@+id/changephone_change_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/activity_padding_leftright"
+        android:layout_marginRight="@dimen/activity_padding_leftright"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:text="@string/change_phone" />
+
+</LinearLayout>

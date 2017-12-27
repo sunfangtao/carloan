@@ -1,6 +1,8 @@
 package com.aioute.carloan.fragment;
 
 import com.aioute.carloan.R;
+import com.aioute.carloan.activity.AboutActivity_;
+import com.aioute.carloan.activity.ChangePhoneActivity_;
 import com.aioute.carloan.activity.SettingActivity_;
 import com.aioute.carloan.base.CustomBaseFragment;
 
@@ -8,6 +10,7 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
+import cn.sft.util.MyHandler;
 import cn.sft.view.AlwaysMarqueeTextView;
 
 /**
@@ -24,7 +27,13 @@ public class MyFragment extends CustomBaseFragment {
 
     @Override
     protected void afterViews() {
-        updateAccountData("18562172893", "测试");
+        new MyHandler(5000){
+            @Override
+            public void run() {
+                updateAccountData("18562172893", "测试");
+            }
+        };
+
     }
 
     /**
@@ -39,9 +48,9 @@ public class MyFragment extends CustomBaseFragment {
         accountTV.setHtmlText(String.format(text, account, group));
     }
 
-    @Click(R.id.my_aboutus_tv)
+    @Click(R.id.my_about_tv)
     void aboutUsClick() {
-
+        AboutActivity_.intent(this).start();
     }
 
     @Click(R.id.my_setting_tv)
@@ -51,7 +60,7 @@ public class MyFragment extends CustomBaseFragment {
 
     @Click(R.id.my_phone_tv)
     void phoneClick() {
-
+        ChangePhoneActivity_.intent(this).start();
     }
 
     @Click(R.id.my_exit_btn)

@@ -21,6 +21,7 @@
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="28dp"
+            android:freezesText="true"
             android:gravity="center"
             android:minWidth="80dp"
             android:padding="5dp"
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             android:layout_marginTop="10dp"
+            android:freezesText="true"
             android:gravity="center"
             android:textColor="@color/colorWhiteText"
             android:textSize="14sp"
@@ -117,14 +119,13 @@
                     tools:text="@string/device_type_percent_count" />
             </LinearLayout>
 
-            <cn.sft.view.AlwaysMarqueeTextView
+            <com.aioute.carloan.view.WarnCarCountTextView
                 android:id="@+id/main_warn_carcount_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="adsfadsf" />
+                android:gravity="center" />
 
             <LinearLayout
                 android:layout_width="0dp"

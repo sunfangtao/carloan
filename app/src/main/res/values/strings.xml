@@ -25,10 +25,17 @@
     <string name="main_page">首页</string>
     <string name="monitor">监控</string>
     <string name="my">我的</string>
-    <string name="aboutus">关于我们</string>
+    <string name="about">关于</string>
     <string name="setting">设置</string>
     <string name="change_phone">更改手机号</string>
+    <string name="bind_phone">绑定手机号码：%1$s</string>
     <string name="exit">退出</string>
+    <string name="phone">手机号</string>
+    <string name="auth_code">验证码</string>
+    <string name="input_phone">请输入手机号码</string>
+    <string name="intpu_auth_code">请输入验证码</string>
+    <string name="obtain_auth_code">获取验证码</string>
+    <string name="bind">立即绑定</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

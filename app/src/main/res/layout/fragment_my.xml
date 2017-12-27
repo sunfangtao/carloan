@@ -20,11 +20,11 @@
         app:drawableWidth="70dp" />
 
     <cn.sft.view.AlwaysMarqueeTextView
-        android:id="@+id/my_aboutus_tv"
+        android:id="@+id/my_about_tv"
         style="@style/My_TextView"
         android:drawableLeft="@mipmap/ic_launcher_round"
         android:drawableRight="@mipmap/ic_launcher_round"
-        android:text="@string/aboutus" />
+        android:text="@string/about" />
 
     <include layout="@layout/devider_gray_match" />
 

@@ -2,6 +2,7 @@ package com.aioute.carloan.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.aioute.carloan.R;
@@ -32,6 +33,7 @@ public class MainActivity extends CustomBaseActivity implements RadioGroup.OnChe
     // 我的Fragment
     MyFragment myFragment;
     //------------------------------------------------------------
+    int selectId = 0;
 
     @Override
     protected void noSaveInstanceStateForCreate() {
@@ -59,7 +61,7 @@ public class MainActivity extends CustomBaseActivity implements RadioGroup.OnChe
 
         transaction.commit();
 
-        onCheckedChanged(null, R.id.main_main_rb);
+        onCheckedChanged(null, selectId = R.id.main_main_rb);
     }
 
     @Override
@@ -87,5 +89,10 @@ public class MainActivity extends CustomBaseActivity implements RadioGroup.OnChe
                 break;
         }
         transaction.commit();
+    }
+
+    @Override
+    protected void afterRestoreInstanceState(Bundle bundle) {
+        onCheckedChanged(null, radioGroup.getCheckedRadioButtonId() == -1 ? selectId : radioGroup.getCheckedRadioButtonId());
     }
 }

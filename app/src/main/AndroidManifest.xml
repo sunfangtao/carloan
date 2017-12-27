@@ -18,9 +18,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity_" />
+        <activity android:name=".activity.TaskActivity_" />
         <activity android:name=".activity.SettingActivity_" />
         <activity android:name=".activity.FixPasswordActivity_" />
         <activity android:name=".activity.WarnSettingActivity_" />
+        <activity android:name=".activity.ChangePhoneActivity_" />
+        <activity android:name=".activity.BindPhoneActivity_" />
+        <activity android:name=".activity.AboutActivity_" />
         <activity android:name=".base.CustomBaseActivity_" />
 
         <meta-data
