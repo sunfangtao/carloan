@@ -28,7 +28,6 @@ import java.util.ArrayList;
 
 import cn.sft.base.adapter.BaseAdapter;
 import cn.sft.listener.RecyclerViewItemClickListener;
-import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
 
 /**
@@ -93,17 +92,6 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
         initMainFunctionUI();
         initMainProgressUI();
         initMainCarCountUI();
-
-        new MyHandler(5000) {
-            @Override
-            public void run() {
-                updateWarnBadge("20");
-                updateBrokeElectricPBAndValue(10, 50);
-                updateDeviceTypeCount(100, 20, 50, 30);
-                updateNoTravelPBAndValue(20, 80);
-                updateWarnCarCount(50, 160);
-            }
-        };
     }
 
     /**

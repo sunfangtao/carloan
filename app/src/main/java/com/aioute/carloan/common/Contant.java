@@ -1,5 +1,7 @@
 package com.aioute.carloan.common;
 
+import java.io.File;
+
 /**
  * Created by Administrator on 2017/12/19.
  */
@@ -18,7 +20,7 @@ public class Contant {
     }
 
     public static final class FilePath {
-        // public static final String PHOTO_PATH = "headpic" + File.separator + "photo" + File.separator;
+        public static final String PHOTO_PATH = "photo" + File.separator;
     }
 
     public static final class ShareKey {
@@ -26,6 +28,9 @@ public class Contant {
     }
 
     public static final class BroadcastKey {
+        public static final String TAKETASKPHOTO_ITEM_PHOTO = "takeTaskPhotoItemPhoto";
+        public static final String TAKETASKPHOTO_ITEM_SHOW = "takeTaskPhotoItemShow";
+        public static final String TAKETASKPHOTO_ITEM_CANCEL = "takeTaskPhotoItemCancel";
         public static final String TASK_ITEM_PHOTO = "taskItemPhoto";
         public static final String TASK_ITEM_NAV = "taskItemNav";
         public static final String POSITION = "position";

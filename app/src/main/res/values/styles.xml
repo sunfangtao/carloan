@@ -128,4 +128,13 @@
         <item name="android:paddingLeft">@dimen/activity_padding_leftright</item>
         <item name="android:paddingRight">@dimen/activity_padding_leftright</item>
     </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/default_btn_bk</item>
+        <item name="android:textColor">@color/colorWhiteText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

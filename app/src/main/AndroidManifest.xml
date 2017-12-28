@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".activity.MainActivity_" />
         <activity android:name=".activity.TaskActivity_" />
+        <activity android:name=".activity.TakeTaskPhotoActivity_" />
         <activity android:name=".activity.SettingActivity_" />
         <activity android:name=".activity.FixPasswordActivity_" />
         <activity android:name=".activity.WarnSettingActivity_" />

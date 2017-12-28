@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.TakeTaskPhotoActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright">
+
+        <cn.sft.view.AlwaysMarqueeTextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableLeft="@mipmap/ic_launcher_round"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/upload_photo"
+            android:textColor="@color/colorBlackText"
+            android:textSize="14sp"
+            app:drawableHeight="20dp"
+            app:drawableWidth="20dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/taketaskphoto_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/take_task_photo_tip1"
+            android:textColor="@color/colorBlackText"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/take_task_photo_tip2"
+            android:textColor="@color/colorGrayText"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/taketaskphoto_btn"
+            style="@style/Button"
+            android:layout_marginTop="20dp"
+            android:text="@string/confirm_upload" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/taketaskphoto_ck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/site_nocar"
+            android:textColor="@color/colorGrayText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/take_task_photo_tip3"
+            android:textColor="@color/colorRedText" />
+    </LinearLayout>
+
+</LinearLayout>

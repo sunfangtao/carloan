@@ -10,7 +10,6 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
-import cn.sft.util.MyHandler;
 import cn.sft.view.AlwaysMarqueeTextView;
 
 /**
@@ -27,12 +26,6 @@ public class MyFragment extends CustomBaseFragment {
 
     @Override
     protected void afterViews() {
-        new MyHandler(5000){
-            @Override
-            public void run() {
-                updateAccountData("18562172893", "测试");
-            }
-        };
 
     }
 

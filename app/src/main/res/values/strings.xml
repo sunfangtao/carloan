@@ -38,6 +38,14 @@
     <string name="bind">立即绑定</string>
     <string name="sender">发送人：%1$s</string>
     <string name="plate">车牌号：%1$s</string>
+    <string name="in_progress_task">未完成(%1$d)</string>
+    <string name="finish_task">已完成(%1$d)</string>
+    <string name="upload_photo">上传照片</string>
+    <string name="take_task_photo_tip1">*上传与车辆无关的图片将无法通过审核！</string>
+    <string name="take_task_photo_tip2">请在停车点上传车牌照，车牌和人等证明车辆安全的照片。至少上传1张，最多3张。</string>
+    <string name="confirm_upload">确认上传</string>
+    <string name="site_nocar">现场无车</string>
+    <string name="take_task_photo_tip3">若现场没有车辆请拍现场环境，并勾起“现场无车</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

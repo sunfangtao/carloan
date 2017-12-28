@@ -24,7 +24,7 @@ public class MainFunctionAdapter extends BaseAdapter {
 
     @Override
     public int onCreateViewLayoutID(int viewType) {
-        return R.layout.main_function_item;
+        return R.layout.item_main_function_item;
     }
 
     @Override

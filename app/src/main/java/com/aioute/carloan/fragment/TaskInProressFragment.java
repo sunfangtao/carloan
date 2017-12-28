@@ -27,7 +27,7 @@ import cn.sft.view.DefaultNullRecyclerView;
 @EFragment
 public class TaskInProressFragment extends CustomBaseFragment {
 
-    //未完成的任务
+    //任务列表
     protected List<TaskBean> taskList;
 
     @Nullable
@@ -58,6 +58,7 @@ public class TaskInProressFragment extends CustomBaseFragment {
      * @param position
      */
     public void removeItemForFinishPhoto(int position) {
+        Util.print("removeItemForFinishPhoto="+position);
         if (position < 0 || position > taskList.size() - 1) {
             throw new IllegalArgumentException("position 越界");
         }
@@ -77,6 +78,7 @@ public class TaskInProressFragment extends CustomBaseFragment {
      */
     void notifyItemRemoved(int position) {
         ((DefaultNullRecyclerView) getView()).getAdapter().notifyItemRemoved(position);
+        ((DefaultNullRecyclerView) getView()).getAdapter().notifyItemRangeChanged(position, taskList.size());
     }
 
 

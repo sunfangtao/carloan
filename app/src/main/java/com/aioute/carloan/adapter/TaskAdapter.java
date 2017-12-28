@@ -33,7 +33,7 @@ public class TaskAdapter extends BaseAdapter {
 
     @Override
     public int onCreateViewLayoutID(int viewType) {
-        return R.layout.task_item;
+        return R.layout.item_task;
     }
 
     @Override
