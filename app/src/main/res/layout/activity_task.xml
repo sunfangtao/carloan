@@ -12,7 +12,6 @@
         android:id="@+id/task_rg"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/colorAccent"
         android:orientation="horizontal">
 
         <cn.sft.view.DrawableCenterRadioButton
@@ -26,6 +25,8 @@
             android:text="@string/default_fill" />
 
     </RadioGroup>
+
+    <include layout="@layout/devider_gray_match"/>
 
     <FrameLayout
         android:id="@+id/task_contain_layout"

@@ -58,7 +58,7 @@ public class TaskInProressFragment extends CustomBaseFragment {
      * @param position
      */
     public void removeItemForFinishPhoto(int position) {
-        Util.print("removeItemForFinishPhoto="+position);
+        Util.print("removeItemForFinishPhoto=" + position);
         if (position < 0 || position > taskList.size() - 1) {
             throw new IllegalArgumentException("position 越界");
         }
@@ -84,18 +84,31 @@ public class TaskInProressFragment extends CustomBaseFragment {
 
     void getTask() {
         TaskBean taskBean = new TaskBean();
+        taskBean.setNumber(11);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(22);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(33);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(44);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(55);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(66);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(77);
         taskList.add(taskBean);
     }
 

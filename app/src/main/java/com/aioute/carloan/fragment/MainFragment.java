@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aioute.carloan.R;
-import com.aioute.carloan.activity.PhotographActivity_;
+import com.aioute.carloan.activity.PhotoVerifyActivity_;
 import com.aioute.carloan.activity.TaskActivity_;
 import com.aioute.carloan.adapter.MainFunctionAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
@@ -316,7 +316,7 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
                 break;
             case 3:
                 // 拍照检查
-                PhotographActivity_.intent(getActivity()).start();
+                PhotoVerifyActivity_.intent(getActivity()).start();
                 break;
             case 4:
                 // 我的任务

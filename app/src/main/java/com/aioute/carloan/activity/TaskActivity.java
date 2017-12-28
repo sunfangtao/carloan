@@ -18,7 +18,6 @@ import com.aioute.carloan.fragment.TaskInProressFragment_;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
 
 /**
@@ -67,21 +66,14 @@ public class TaskActivity extends CustomBaseActivity implements RadioGroup.OnChe
 
         transaction.commit();
 
-        onCheckedChanged(null, selectId = R.id.task_inprogress_rb);
-
-        new MyHandler(2000){
-            @Override
-            public void run() {
-                updateInProgressCount(10);
-                updateFinishCount(20);
-            }
-        };
+        inProgressRB.setChecked(true);
     }
 
     @Override
     protected void afterViews() {
         updateInProgressCount(0);
         updateFinishCount(0);
+
         radioGroup.setOnCheckedChangeListener(this);
     }
 
@@ -105,6 +97,7 @@ public class TaskActivity extends CustomBaseActivity implements RadioGroup.OnChe
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
+        Util.print("onCheckedChanged=" + group);
         FragmentManager fm = getFragmentManager();
         // 开启Fragment事务
         FragmentTransaction transaction = fm.beginTransaction();
@@ -124,11 +117,17 @@ public class TaskActivity extends CustomBaseActivity implements RadioGroup.OnChe
     @Override
     public void forReceiverResult(Intent intent) {
         if (intent.getBooleanExtra(Contant.BroadcastKey.TASK_ITEM_PHOTO, false)) {
-            Util.print("photo:" + intent.getIntExtra(Contant.BroadcastKey.POSITION, -1));
-//            inProressFragment.removeItemForFinishPhoto(intent.getIntExtra(Contant.BroadcastKey.POSITION, -1));
-            TakeTaskPhotoActivity_.intent(this).start();
+            // 拍照
+            TakeTaskPhotoActivity_.intent(this)
+                    .extra(Contant.BroadcastKey.POSITION, intent.getIntExtra(Contant.BroadcastKey.POSITION, -1))
+                    .extra(Contant.BroadcastKey.BEAN, intent.getSerializableExtra(Contant.BroadcastKey.BEAN))
+                    .start();
         } else if (intent.getBooleanExtra(Contant.BroadcastKey.TASK_ITEM_NAV, false)) {
+            // 导航
             Util.print("nav:" + intent.getIntExtra(Contant.BroadcastKey.POSITION, -1));
+        } else if (intent.getBooleanExtra(Contant.BroadcastKey.TASK_ITEM_REMOVE, false)) {
+            // 拍照完成，从列表中移除;对于已完成任务没有此回调；否则需要分别处理，不能直接使用inProressFragment
+            inProressFragment.removeItemForFinishPhoto(intent.getIntExtra(Contant.BroadcastKey.POSITION, -1));
         }
     }
 

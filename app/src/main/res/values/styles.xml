@@ -111,10 +111,12 @@
     </style>
 
     <style name="Task_RadioBUtton" parent="Main_RadioButton">
+        <item name="android:textColor">@drawable/radiobtn_textcolor</item>
         <item name="android:gravity">center</item>
     </style>
 
     <style name="Photograph_RadioButton" parent="Main_RadioButton">
+        <item name="android:textColor">@drawable/radiobtn_textcolor</item>
         <item name="android:gravity">center</item>
     </style>
 

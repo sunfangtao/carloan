@@ -25,6 +25,7 @@ import cn.sft.util.Util;
  * 报警信息设置界面
  */
 
+// TODO 没有处理异常恢复
 @EActivity(R.layout.activity_warnsetting)
 public class WarnSettingActivity extends CustomBaseActivity {
 

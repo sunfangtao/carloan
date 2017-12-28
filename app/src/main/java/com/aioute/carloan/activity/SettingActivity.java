@@ -36,6 +36,11 @@ public class SettingActivity extends CustomBaseActivity {
 
     @Override
     protected void afterViews() {
+
+    }
+
+    @Override
+    protected void noSaveInstanceStateForCreate() {
         // 设置默认刷新时间
         updateMonitorTime("30秒");
         updateTraceTime("30秒");

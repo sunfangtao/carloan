@@ -26,6 +26,7 @@
         <activity android:name=".activity.ChangePhoneActivity_" />
         <activity android:name=".activity.BindPhoneActivity_" />
         <activity android:name=".activity.AboutActivity_" />
+        <activity android:name=".activity.PhotoVerifyActivity_" />
         <activity
             android:name=".activity.PhotographActivity_"
             android:label="已拍照"/>

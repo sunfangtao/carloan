@@ -52,7 +52,7 @@ public class TaskAdapter extends BaseAdapter {
 
         senderTV.setText(String.format(context.getString(R.string.sender), "18562172893"));
         plateTV.setText(String.format(context.getString(R.string.plate), "鲁F123456"));
-        positionTV.setText("莱山区" + position);
+        positionTV.setText("莱山区" + taskBean.getNumber());
         Glide.with(context).load(R.mipmap.ic_launcher_round).into(headPicIM);
         sendTimeTV.setText("2017-52-64 10:22:22");
 

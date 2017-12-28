@@ -11,6 +11,7 @@ import com.aioute.carloan.R;
 import com.aioute.carloan.adapter.TakeTaskPhotoAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
 import com.aioute.carloan.base.CustomBaseActivity;
+import com.aioute.carloan.bean.TaskBean;
 import com.aioute.carloan.common.Contant;
 import com.aioute.carloan.util.TakePhotoUtil;
 import com.jph.takephoto.app.TakePhoto;
@@ -45,25 +46,29 @@ public class TakeTaskPhotoActivity extends CustomBaseActivity implements TakePho
     // 拍照工具
     protected TakePhotoUtil takePhotoUtil;
 
-    private final int MAX_COUNT = 3;
     //----------------------------------------------------------
     // 拍照列表
     private List<String> pohotList;
     // 拍照保存的路径
     private String photoFilePath;
+    // 需要拍照的任务
+    private TaskBean taskBean;
 
     @Override
     protected void noSaveInstanceStateForCreate() {
-        takePhotoUtil = new TakePhotoUtil(this, this, null);
+        taskBean = (TaskBean) getIntent().getSerializableExtra(Contant.BroadcastKey.BEAN);
         photoFilePath = Util.getPicPath(this, Contant.FilePath.PHOTO_PATH);
     }
 
     @Override
     protected void afterViews() {
-        TakeTaskPhotoAdapter adapter = new TakeTaskPhotoAdapter(this, pohotList = new ArrayList<>(), MAX_COUNT);
-        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(5);
+        // takePhotoUtil无法恢复对象，需要new
+        takePhotoUtil = new TakePhotoUtil(this, this, savedInstanceState);
+
+        TakeTaskPhotoAdapter adapter = new TakeTaskPhotoAdapter(this, pohotList = new ArrayList<>(), Contant.TAKE_TASK_PHOTO_MAX_COUNT);
+        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(Util.dp2px(this, 5));
         photoRV.addItemDecoration(decoration);
-        photoRV.setLayoutManager(new GridLayoutManager(this, MAX_COUNT));
+        photoRV.setLayoutManager(new GridLayoutManager(this, Contant.TAKE_TASK_PHOTO_COLUMN));
         photoRV.setAdapter(adapter);
     }
 
@@ -72,7 +77,8 @@ public class TakeTaskPhotoActivity extends CustomBaseActivity implements TakePho
         RequestParams params = new RequestParams();
         params.put("", noCarCK.isChecked() ? "true" : "false");
 
-
+        uploadSuccess();
+        finish();
     }
 
     @Override
@@ -115,6 +121,15 @@ public class TakeTaskPhotoActivity extends CustomBaseActivity implements TakePho
 
     void notifyDataSetChanged() {
         photoRV.getAdapter().notifyDataSetChanged();
+    }
+
+    /**
+     * 图片上传成功后的处理逻辑
+     */
+    void uploadSuccess() {
+        sendBroadcast(new Intent(TaskActivity_.class.getName())
+                .putExtra(Contant.BroadcastKey.TASK_ITEM_REMOVE, true)
+                .putExtra(Contant.BroadcastKey.POSITION, getIntent().getIntExtra(Contant.BroadcastKey.POSITION, 0)));
     }
 
     @Override

@@ -8,4 +8,13 @@ import cn.sft.sqlhelper.DBVO;
 
 public class TaskBean extends DBVO {
 
+    private int number;
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 }

@@ -12,6 +12,7 @@
     <color name="colorGrayText">#666666</color>
     <color name="colorBlackText">#333333</color>
     <color name="colorRedText">#FF0000</color>
+    <color name="colorBlueText">#3366EE</color>
     <!--========================================-->
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorDeepGray">#666666</color>

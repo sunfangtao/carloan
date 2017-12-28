@@ -49,6 +49,8 @@
     <string name="confirm">确认</string>
     <string name="untreated">未处理(%1$d)</string>
     <string name="processed">已处理(%1$d)</string>
+    <string name="no_photo">未拍照(%1$d)</string>
+    <string name="has_photo">已拍照(%1$d)</string>
     <string name="again_photograph">请重拍</string>
 
     <string-array name="setting_refresh_time">

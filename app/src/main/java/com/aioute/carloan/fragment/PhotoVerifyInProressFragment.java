@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.aioute.carloan.adapter.PhotographProcessedAdapter;
+import com.aioute.carloan.adapter.TaskAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
 import com.aioute.carloan.base.CustomBaseFragment;
-import com.aioute.carloan.bean.PhotographBean;
+import com.aioute.carloan.bean.TaskBean;
 
 import org.androidannotations.annotations.EFragment;
 
@@ -20,14 +20,15 @@ import cn.sft.util.Util;
 import cn.sft.view.DefaultNullRecyclerView;
 
 /**
- * Created by FlySand on 2017/12/25.
- * 拍照未处理
+ * Created by Administrator on 2017/12/27.
+ * 拍照完成没有处理的任务列表界面
  */
-@EFragment
-public class PhotographUntreatedFragment extends CustomBaseFragment {
 
-    //拍照列表
-    protected List<PhotographBean> photographBeanList;
+@EFragment
+public class PhotoVerifyInProressFragment extends CustomBaseFragment {
+
+    //任务列表
+    protected List<TaskBean> taskList;
 
     @Nullable
     @Override
@@ -38,8 +39,8 @@ public class PhotographUntreatedFragment extends CustomBaseFragment {
 
     @Override
     protected void afterViews() {
-        PhotographProcessedAdapter adapter = new PhotographProcessedAdapter(getActivity(), this, photographBeanList = new ArrayList<>());
-        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(Util.dp2px(getActivity(), 5));
+        TaskAdapter adapter = new TaskAdapter(getActivity(), this, taskList = new ArrayList<>());
+        RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(Util.dp2px(getActivity(), 10));
         DefaultNullRecyclerView recyclerView = (DefaultNullRecyclerView) getView();
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(decoration);
@@ -52,20 +53,20 @@ public class PhotographUntreatedFragment extends CustomBaseFragment {
     }
 
     /**
-     * 删除指定位置的item
+     * 删除指定位置的item（用于完成拍照后从未拍照列表删除）
      *
      * @param position
      */
     public void removeItemForFinishPhoto(int position) {
-        if (position < 0 || position > photographBeanList.size() - 1) {
+        Util.print("removeItemForFinishPhoto=" + position);
+        if (position < 0 || position > taskList.size() - 1) {
             throw new IllegalArgumentException("position 越界");
         }
-        photographBeanList.remove(position);
+        taskList.remove(position);
         notifyItemRemoved(position);
     }
 
     /**
-     *
      * 刷新Adapter
      */
     void notifyDataSetChanged() {
@@ -77,17 +78,25 @@ public class PhotographUntreatedFragment extends CustomBaseFragment {
      */
     void notifyItemRemoved(int position) {
         ((DefaultNullRecyclerView) getView()).getAdapter().notifyItemRemoved(position);
-        ((DefaultNullRecyclerView) getView()).getAdapter().notifyItemRangeChanged(position, photographBeanList.size());
+        ((DefaultNullRecyclerView) getView()).getAdapter().notifyItemRangeChanged(position, taskList.size());
     }
 
-    void getTask() {
-        String[] photos = new String[]{"http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png", "http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png", "http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png"};
 
-        for (int i = 0; i < 10; i++) {
-            PhotographBean bean = new PhotographBean();
-            bean.setPhotos(photos);
-            photographBeanList.add(bean);
-        }
+    void getTask() {
+        TaskBean taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
+        taskBean = new TaskBean();
+        taskList.add(taskBean);
     }
 
 }

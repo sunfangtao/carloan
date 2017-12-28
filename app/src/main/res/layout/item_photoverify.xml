@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:paddingBottom="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright">
+
+        <ImageView
+            android:id="@+id/photoverify_headpic_im"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/photoverify_time_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/photoverify_days_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:background="@color/colorAccent"
+            android:text="2017-01-12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        android:paddingLeft="50dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <cn.sft.view.AlwaysMarqueeTextView
+            android:id="@+id/photoverify_plate_tv"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/ic_launcher_round"
+            app:drawableHeight="20dp"
+            app:drawableWidth="20dp" />
+
+        <cn.sft.view.AlwaysMarqueeTextView
+            android:id="@+id/photoverify_position_tv"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/ic_launcher_round"
+            app:drawableHeight="20dp"
+            app:drawableWidth="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

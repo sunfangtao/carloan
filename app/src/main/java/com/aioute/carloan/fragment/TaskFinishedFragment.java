@@ -12,21 +12,33 @@ import org.androidannotations.annotations.EFragment;
 @EFragment
 public class TaskFinishedFragment extends TaskInProressFragment {
 
-    @Override
     void getTask() {
         TaskBean taskBean = new TaskBean();
+        taskBean.setNumber(11);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(22);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(33);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(44);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(55);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(66);
         taskList.add(taskBean);
+
         taskBean = new TaskBean();
+        taskBean.setNumber(77);
         taskList.add(taskBean);
     }
 }

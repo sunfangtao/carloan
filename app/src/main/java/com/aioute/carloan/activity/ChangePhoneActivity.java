@@ -23,6 +23,10 @@ public class ChangePhoneActivity extends CustomBaseActivity {
 
     @Override
     protected void afterViews() {
+    }
+
+    @Override
+    protected void noSaveInstanceStateForCreate() {
         updatePhone("18562172893");
     }
 
