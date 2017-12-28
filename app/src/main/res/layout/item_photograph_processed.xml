@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright">
+
+        <ImageView
+            android:id="@+id/item_photograph_processed_headpic_im"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/item_photograph_processed_sender_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="发送人：text \n 上传时间：" />
+
+        <TextView
+            android:id="@+id/item_photograph_processed_plate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="粤BGSADE"
+            android:textColor="@android:color/holo_blue_dark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp">
+
+        <cn.sft.view.CircleImageView
+            android:id="@+id/item_photograph_processed_photo_0"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@android:color/transparent"
+            app:civ_border_width="1dp"
+            tools:background="@color/check_bg" />
+
+        <cn.sft.view.CircleImageView
+            android:id="@+id/item_photograph_processed_photo_1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="16dp"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@android:color/transparent"
+            app:civ_border_width="1dp"
+            tools:background="@color/check_bg" />
+
+        <cn.sft.view.CircleImageView
+            android:id="@+id/item_photograph_processed_photo_2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="16dp"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@android:color/transparent"
+            app:civ_border_width="1dp"
+            tools:background="@color/check_bg" />
+    </LinearLayout>
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/item_photograph_processed_location_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:drawablePadding="10dp"
+        android:gravity="center|left"
+        android:includeFontPadding="false"
+        android:text="拍照位置："
+        android:textSize="14sp"
+        app:drawableHeight="10dp"
+        app:drawableWidth="10dp" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/item_photograph_processed_address_check_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:drawablePadding="10dp"
+        android:gravity="center|left"
+        android:includeFontPadding="false"
+        android:text="位置信息："
+        app:drawableHeight="10dp"
+        app:drawableWidth="10dp" />
+
+
+</LinearLayout>

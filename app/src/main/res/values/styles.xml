@@ -114,6 +114,10 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Photograph_RadioButton" parent="Main_RadioButton">
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="My_TextView" parent="TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">45dp</item>

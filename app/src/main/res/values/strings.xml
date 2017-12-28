@@ -46,6 +46,10 @@
     <string name="confirm_upload">确认上传</string>
     <string name="site_nocar">现场无车</string>
     <string name="take_task_photo_tip3">若现场没有车辆请拍现场环境，并勾起“现场无车</string>
+    <string name="confirm">确认</string>
+    <string name="untreated">未处理(%1$d)</string>
+    <string name="processed">已处理(%1$d)</string>
+    <string name="again_photograph">请重拍</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

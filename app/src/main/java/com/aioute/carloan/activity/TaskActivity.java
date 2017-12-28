@@ -91,7 +91,7 @@ public class TaskActivity extends CustomBaseActivity implements RadioGroup.OnChe
      * @param count
      */
     public void updateInProgressCount(int count) {
-        inProgressRB.setText(String.format(getString(R.string.in_progress_task), 0));
+        inProgressRB.setText(String.format(getString(R.string.in_progress_task), count));
     }
 
     /**
@@ -100,7 +100,7 @@ public class TaskActivity extends CustomBaseActivity implements RadioGroup.OnChe
      * @param count
      */
     public void updateFinishCount(int count) {
-        finishRB.setText(String.format(getString(R.string.finish_task), 0));
+        finishRB.setText(String.format(getString(R.string.finish_task), count));
     }
 
     @Override

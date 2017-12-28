@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RadioGroup
+        android:id="@+id/photograph_rg"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/photograph_untreated_rb"
+            style="@style/Photograph_RadioButton" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/photograph_processed_rb"
+            style="@style/Photograph_RadioButton" />
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/photograph_contain_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
