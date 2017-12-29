@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.aioute.carloan.adapter.PhotographProcessedAdapter;
+import com.aioute.carloan.adapter.PhotographUntreatedAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
 import com.aioute.carloan.base.CustomBaseFragment;
 import com.aioute.carloan.bean.PhotographBean;
@@ -14,6 +14,7 @@ import com.aioute.carloan.bean.PhotographBean;
 import org.androidannotations.annotations.EFragment;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import cn.sft.util.Util;
@@ -38,7 +39,7 @@ public class PhotographUntreatedFragment extends CustomBaseFragment {
 
     @Override
     protected void afterViews() {
-        PhotographProcessedAdapter adapter = new PhotographProcessedAdapter(getActivity(), this, photographBeanList = new ArrayList<>());
+        PhotographUntreatedAdapter adapter = new PhotographUntreatedAdapter(getActivity(), this, photographBeanList = new ArrayList<>());
         RecyclerViewItemDecoration decoration = new RecyclerViewItemDecoration(Util.dp2px(getActivity(), 5));
         DefaultNullRecyclerView recyclerView = (DefaultNullRecyclerView) getView();
         recyclerView.setAdapter(adapter);
@@ -65,7 +66,6 @@ public class PhotographUntreatedFragment extends CustomBaseFragment {
     }
 
     /**
-     *
      * 刷新Adapter
      */
     void notifyDataSetChanged() {
@@ -81,11 +81,13 @@ public class PhotographUntreatedFragment extends CustomBaseFragment {
     }
 
     void getTask() {
-        String[] photos = new String[]{"http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png", "http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png", "http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png"};
+        String[] photos = new String[]{"http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png",
+                "http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png",
+                "http://mapopen-website-wiki.cdn.bcebos.com/homePage/images/hp-use2.png"};
 
         for (int i = 0; i < 10; i++) {
             PhotographBean bean = new PhotographBean();
-            bean.setPhotos(photos);
+            bean.setPhotos(Arrays.asList(photos));
             photographBeanList.add(bean);
         }
     }

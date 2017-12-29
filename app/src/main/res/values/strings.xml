@@ -51,6 +51,7 @@
     <string name="processed">已处理(%1$d)</string>
     <string name="no_photo">未拍照(%1$d)</string>
     <string name="has_photo">已拍照(%1$d)</string>
+    <string name="sender_time">发送人：%1$s\n上传时间：%2$s</string>
     <string name="again_photograph">请重拍</string>
 
     <string-array name="setting_refresh_time">

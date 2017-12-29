@@ -1,11 +1,18 @@
 package com.aioute.carloan.util;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.flysand.ninegrid.ImageInfo;
+import com.flysand.ninegrid.preview.ImagePreviewActivity;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/12/28.
@@ -41,4 +48,12 @@ public class PicUtil {
         }
     }
 
+    public void showBigImages(Context context, ArrayList<ImageInfo> imageInfo, int currentItem) {
+        Intent intent = new Intent(context, ImagePreviewActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(ImagePreviewActivity.IMAGE_INFO, (Serializable) imageInfo);
+        bundle.putInt(ImagePreviewActivity.CURRENT_ITEM, currentItem);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
 }

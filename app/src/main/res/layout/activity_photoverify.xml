@@ -17,6 +17,7 @@
             android:id="@+id/photoverify_inprogress_tv"
             android:layout_width="0dp"
             android:gravity="center"
+            android:textColor="@color/colorBlueText"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
@@ -27,6 +28,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
     </LinearLayout>
+
+    <include layout="@layout/devider_gray_match" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/photoverify_rv"

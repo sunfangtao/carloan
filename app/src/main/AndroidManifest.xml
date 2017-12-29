@@ -29,8 +29,11 @@
         <activity android:name=".activity.PhotoVerifyActivity_" />
         <activity
             android:name=".activity.PhotographActivity_"
-            android:label="已拍照"/>
+            android:label="已拍照" />
         <activity android:name=".base.CustomBaseActivity_" />
+
+        <!-- 开启高德地图的定位服务 -->
+        <service android:name="com.amap.api.location.APSService"/>
 
         <meta-data
             android:name="appId"
@@ -39,6 +42,9 @@
             android:name="URL"
             android:value="${URL}"
             tools:replace="android:value" />
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${AMAP_MAP}" />
     </application>
 
 </manifest>

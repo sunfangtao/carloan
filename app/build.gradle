@@ -49,6 +49,7 @@ android {
                 JPUSH_CHANNEL: "developer-default", // 暂时填写默认值即可.
                 APP_ID       : "8a5b4b5c-4b44-494d-a374-cc8b04c67789",
                 URL          : "http://221.0.91.34:12080",
+                AMAP_MAP     : "df811166a767fa2f6fbb236e5c038eb0",
         ]
 
         multiDexEnabled true
@@ -70,6 +71,7 @@ android {
                     JPUSH_PKGNAME: defaultConfig.applicationId + applicationIdSuffix,
                     APP_ID       : "8a5b4b5c-4b44-494d-a374-cc8b04c67789",
                     URL          : "http://221.0.91.34:12080",
+                    AMAP_MAP     : "4951819e37b2f38ee2af4921d1ee57c6",
             ]
         }
     }
@@ -86,6 +88,10 @@ dependencies {
 
     //图片缩放查看
     implementation 'com.github.flsand:ImagePreviewLibrary:1.0.0'
+    // 定位
+    implementation 'com.amap.api:location:latest.integration'
+    // 导航
+    implementation 'com.amap.api:navi-3dmap:latest.integration'
     implementation 'com.jph.takephoto:takephoto_library:2.0.4'
     implementation 'com.github.bumptech.glide:glide:4.3.1'
     implementation 'cn.jiguang.sdk:jpush:3.0.9'
@@ -93,6 +99,8 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.0'
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     api "org.androidannotations:androidannotations-api:$AAVersion"
-    debugImplementation 'com.sft:core-base:1.2.20.39-SNAPSHOT@aar'
+    debugImplementation 'com.sft:core-base:1.2.20.42-SNAPSHOT@aar'
     releaseImplementation 'com.sft:core-base:1.1.0@aar'
+
+
 }

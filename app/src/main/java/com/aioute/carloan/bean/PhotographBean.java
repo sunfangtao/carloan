@@ -1,5 +1,7 @@
 package com.aioute.carloan.bean;
 
+import java.util.List;
+
 import cn.sft.sqlhelper.DBVO;
 
 /**
@@ -8,13 +10,13 @@ import cn.sft.sqlhelper.DBVO;
 
 public class PhotographBean extends DBVO {
 
-    private String[] photos;
+    private List<String> photos;
 
-    public String[] getPhotos() {
+    public List<String> getPhotos() {
         return photos;
     }
 
-    public void setPhotos(String[] photos) {
+    public void setPhotos(List<String> photos) {
         this.photos = photos;
     }
 }

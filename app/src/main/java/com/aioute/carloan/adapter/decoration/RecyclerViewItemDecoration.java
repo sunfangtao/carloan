@@ -16,14 +16,13 @@ public class RecyclerViewItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
 
-        outRect.top = space;
-
-        //该View在整个RecyclerView中位置。  
+        //该View在整个RecyclerView中位置。
         index = parent.getChildAdapterPosition(view);
 
         int spanCount = ((GridLayoutManager) parent.getLayoutManager()).getSpanCount();
 
         if (spanCount > 1) {
+
             if (index < spanCount) {
                 // 第一行
                 outRect.top = space;
@@ -32,18 +31,13 @@ public class RecyclerViewItemDecoration extends RecyclerView.ItemDecoration {
             }
             outRect.bottom = space;
 
-            if (index % spanCount == 0) {
-                // 第一列
-                outRect.left = space;
-                outRect.right = space / 2;
-            } else if (index % spanCount == spanCount - 1) {
+            if (index % spanCount == spanCount - 1) {
                 // 最后一列
-                outRect.left = space / 2;
                 outRect.right = space;
             } else {
-                outRect.left = space / 2;
-                outRect.right = space / 2;
+                outRect.right = 0;
             }
+            outRect.left = space;
         } else {
             if (index == 0) {
                 outRect.top = space;

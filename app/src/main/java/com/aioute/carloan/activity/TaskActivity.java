@@ -14,6 +14,7 @@ import com.aioute.carloan.fragment.TaskFinishedFragment;
 import com.aioute.carloan.fragment.TaskFinishedFragment_;
 import com.aioute.carloan.fragment.TaskInProressFragment;
 import com.aioute.carloan.fragment.TaskInProressFragment_;
+import com.aioute.carloan.util.MapUtil;
 
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
@@ -123,8 +124,8 @@ public class TaskActivity extends CustomBaseActivity implements RadioGroup.OnChe
                     .extra(Contant.BroadcastKey.BEAN, intent.getSerializableExtra(Contant.BroadcastKey.BEAN))
                     .start();
         } else if (intent.getBooleanExtra(Contant.BroadcastKey.TASK_ITEM_NAV, false)) {
-            // 导航
-            Util.print("nav:" + intent.getIntExtra(Contant.BroadcastKey.POSITION, -1));
+            // 导航 TODO 经纬度替换完成路径规划
+            MapUtil.openGaoDeMap(this, 37.264d, 121.0356d, 0);
         } else if (intent.getBooleanExtra(Contant.BroadcastKey.TASK_ITEM_REMOVE, false)) {
             // 拍照完成，从列表中移除;对于已完成任务没有此回调；否则需要分别处理，不能直接使用inProressFragment
             inProressFragment.removeItemForFinishPhoto(intent.getIntExtra(Contant.BroadcastKey.POSITION, -1));

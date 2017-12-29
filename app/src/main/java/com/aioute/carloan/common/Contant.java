@@ -30,6 +30,8 @@ public class Contant {
     }
 
     public static final class BroadcastKey {
+        public static final String PHOTOGRAPH_ITEM_CONFIRM = "takeTaskPhotoItemConfirm";
+        public static final String PHOTOGRAPH_ITEM_TAKEPHOTO = "takeTaskPhotoItemTakePhoto";
         public static final String TAKETASKPHOTO_ITEM_PHOTO = "takeTaskPhotoItemPhoto";
         public static final String TAKETASKPHOTO_ITEM_SHOW = "takeTaskPhotoItemShow";
         public static final String TAKETASKPHOTO_ITEM_CANCEL = "takeTaskPhotoItemCancel";
