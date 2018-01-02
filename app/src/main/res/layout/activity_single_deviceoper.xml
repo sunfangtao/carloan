@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.SingleDeviceOperActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <FrameLayout
+        android:id="@+id/single_deviceoper_contain_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/single_deviceoper_rg"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/single_deviceoper_detail_rb"
+            style="@style/Main_RadioButton"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:text="@string/main_page" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/single_deviceoper_position_rb"
+            style="@style/Main_RadioButton"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:text="@string/monitor" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/single_deviceoper_trace_rb"
+            style="@style/Main_RadioButton"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:text="@string/my" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/single_deviceoper_setting_rb"
+            style="@style/Main_RadioButton"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:text="@string/my" />
+
+    </RadioGroup>
+
+</LinearLayout>

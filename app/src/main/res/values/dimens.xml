@@ -6,4 +6,5 @@
     <!--<dimen name="toolbarPopupMenuTextSize">28dp</dimen>-->
 
     <dimen name="mainProgressLayoutDeviderHeight">10dp</dimen>
+    <dimen name="infoWindowWidth">240dp</dimen>
 </resources>

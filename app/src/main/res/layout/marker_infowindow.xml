@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/infoWindowWidth"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/infowindow_rv"
+        android:layout_width="@dimen/infoWindowWidth"
+        android:layout_height="wrap_content"
+        android:background="@drawable/infowindow_top_bkground"
+        android:overScrollMode="never"
+        android:padding="10dp"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:layout_width="@dimen/infoWindowWidth"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infowindow_rv"
+        android:background="@drawable/infowindow_bottom_bkground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/infowindow_operate_layout"
+            android:layout_width="@dimen/infoWindowWidth"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/infowindow_detail_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/device_detail"
+                android:textColor="@color/colorWhiteText"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/colorWhite"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/infowindow_position_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/realtime_position"
+                android:textColor="@color/colorWhiteText"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/colorWhite"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/infowindow_trace_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/history_trace"
+                android:textColor="@color/colorWhiteText"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/colorWhite"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/infowindow_setting_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/confige_device"
+                android:textColor="@color/colorWhiteText"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/infowindow_devider_im"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/navigation"
+            android:textColor="@color/colorWhiteText" />
+    </LinearLayout>
+
+</RelativeLayout>

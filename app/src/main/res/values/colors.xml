@@ -18,4 +18,5 @@
     <color name="colorDeepGray">#666666</color>
     <color name="colorGray">#D7D7D7</color>
     <color name="colorTransGray">#99D7D7D7</color>
+    <color name="colorTransBlue">#993366EE</color>
 </resources>

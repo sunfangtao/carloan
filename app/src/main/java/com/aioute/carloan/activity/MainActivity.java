@@ -2,11 +2,13 @@ package com.aioute.carloan.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.aioute.carloan.R;
 import com.aioute.carloan.base.CustomBaseActivity;
+import com.aioute.carloan.common.Contant;
 import com.aioute.carloan.fragment.MainFragment;
 import com.aioute.carloan.fragment.MainFragment_;
 import com.aioute.carloan.fragment.MonitorFragment;
@@ -89,6 +91,16 @@ public class MainActivity extends CustomBaseActivity implements RadioGroup.OnChe
                 break;
         }
         transaction.commit();
+    }
+
+    @Override
+    public void forReceiverResult(Intent intent) {
+        if (intent.getBooleanExtra(Contant.BroadcastKey.INFOWINDOW_CLICK, false)) {
+            SingleDeviceOperActivity_.intent(this)
+                    .extra(Contant.BroadcastKey.BEAN, intent.getSerializableExtra(Contant.BroadcastKey.BEAN))
+                    .extra(Contant.BroadcastKey.POSITION, intent.getIntExtra(Contant.BroadcastKey.POSITION, 0))
+                    .start();
+        }
     }
 
     @Override

@@ -12,6 +12,7 @@ public class Contant {
     public static int PASSWORD_MIN_LENGTH = 4;
     public static int TAKE_TASK_PHOTO_MAX_COUNT = 3;
     public static int TAKE_TASK_PHOTO_COLUMN = 3;
+    public static int MAP_MAX_ZOOM_LEVEL = 19;
 
     public static final class HttpType {
         // public static final String LOGIN_TYPE = "logintype";
@@ -32,12 +33,17 @@ public class Contant {
     public static final class BroadcastKey {
         public static final String PHOTOGRAPH_ITEM_CONFIRM = "takeTaskPhotoItemConfirm";
         public static final String PHOTOGRAPH_ITEM_TAKEPHOTO = "takeTaskPhotoItemTakePhoto";
+
         public static final String TAKETASKPHOTO_ITEM_PHOTO = "takeTaskPhotoItemPhoto";
         public static final String TAKETASKPHOTO_ITEM_SHOW = "takeTaskPhotoItemShow";
         public static final String TAKETASKPHOTO_ITEM_CANCEL = "takeTaskPhotoItemCancel";
+
         public static final String TASK_ITEM_REMOVE = "taskItemRemove";
         public static final String TASK_ITEM_PHOTO = "taskItemPhoto";
         public static final String TASK_ITEM_NAV = "taskItemNav";
+
+        public static final String INFOWINDOW_CLICK = "infoWindowClick";
+
         public static final String POSITION = "position";
         public static final String BEAN = "bean";
     }

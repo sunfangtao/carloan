@@ -17,4 +17,19 @@
         android:iconifiedByDefault="false"
         android:queryHint="请输入搜索内容" />
 
+    <ImageButton
+        android:id="@+id/monitor_pre_btn"
+        android:layout_centerVertical="true"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/ic_launcher_round"/>
+
+    <ImageButton
+        android:id="@+id/monitor_next_btn"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/ic_launcher_round"/>
+
 </RelativeLayout>

@@ -53,6 +53,11 @@
     <string name="has_photo">已拍照(%1$d)</string>
     <string name="sender_time">发送人：%1$s\n上传时间：%2$s</string>
     <string name="again_photograph">请重拍</string>
+    <string name="confige_device">配置设备</string>
+    <string name="history_trace">历史轨迹</string>
+    <string name="realtime_position">实时跟踪</string>
+    <string name="device_detail">设备详情</string>
+    <string name="navigation">导航</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>
