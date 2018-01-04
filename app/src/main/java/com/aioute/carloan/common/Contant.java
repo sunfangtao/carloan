@@ -31,6 +31,9 @@ public class Contant {
     }
 
     public static final class BroadcastKey {
+        public static final String SINGLEDEVICE_MENU_REFRESH = "singleDeviceMenuRefresh";
+        public static final String SINGLEDEVICE_MENU_TIME = "singleDeviceMenuTime";
+
         public static final String PHOTOGRAPH_ITEM_CONFIRM = "takeTaskPhotoItemConfirm";
         public static final String PHOTOGRAPH_ITEM_TAKEPHOTO = "takeTaskPhotoItemTakePhoto";
 

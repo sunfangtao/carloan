@@ -18,23 +18,40 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity_" />
-        <activity android:name=".activity.TaskActivity_" />
+        <activity
+            android:name=".activity.TaskActivity_"
+            android:label="@string/my_tasks" />
         <activity android:name=".activity.TakeTaskPhotoActivity_" />
-        <activity android:name=".activity.SettingActivity_" />
-        <activity android:name=".activity.FixPasswordActivity_" />
-        <activity android:name=".activity.WarnSettingActivity_" />
-        <activity android:name=".activity.ChangePhoneActivity_" />
-        <activity android:name=".activity.BindPhoneActivity_" />
-        <activity android:name=".activity.AboutActivity_" />
-        <activity android:name=".activity.PhotoVerifyActivity_" />
+        <activity
+            android:name=".activity.SettingActivity_"
+            android:label="@string/setting" />
+        <activity
+            android:name=".activity.FixPasswordActivity_"
+            android:label="@string/fix_password" />
+        <activity
+            android:name=".activity.WarnSettingActivity_"
+            android:label="@string/warn_info_setting" />
+        <activity
+            android:name=".activity.ChangePhoneActivity_"
+            android:label="更换手机号" />
+        <activity
+            android:name=".activity.BindPhoneActivity_"
+            android:label="绑定手机号码" />
+        <activity
+            android:name=".activity.AboutActivity_"
+            android:label="@string/about" />
+        <activity
+            android:name=".activity.PhotoVerifyActivity_"
+            android:label="@string/onsite_photo" />
         <activity android:name=".activity.SingleDeviceOperActivity_" />
         <activity
             android:name=".activity.PhotographActivity_"
             android:label="已拍照" />
+        <activity android:name=".activity.CarInfoActivity_" />
         <activity android:name=".base.CustomBaseActivity_" />
 
         <!-- 开启高德地图的定位服务 -->
-        <service android:name="com.amap.api.location.APSService"/>
+        <service android:name="com.amap.api.location.APSService" />
 
         <meta-data
             android:name="appId"

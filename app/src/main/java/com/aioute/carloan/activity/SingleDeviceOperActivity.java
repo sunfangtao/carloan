@@ -2,7 +2,11 @@ package com.aioute.carloan.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.aioute.carloan.R;
@@ -37,6 +41,8 @@ public class SingleDeviceOperActivity extends CustomBaseActivity implements Radi
     DeviceSettingFragment deviceSettingFragment;
     //------------------------------------------------------------
     int selectId = 0;
+    // toolbar menu文字
+    String menuTime;
 
     @Override
     protected void noSaveInstanceStateForCreate() {
@@ -73,12 +79,12 @@ public class SingleDeviceOperActivity extends CustomBaseActivity implements Radi
                 selectId = R.id.single_deviceoper_position_rb;
                 break;
             case 2:
-                selectId = R.id.single_deviceoper_position_rb;
+                selectId = R.id.single_deviceoper_trace_rb;
                 break;
             default:
                 selectId = R.id.single_deviceoper_setting_rb;
         }
-        onCheckedChanged(null, selectId);
+        ((RadioButton) findViewById(selectId)).setChecked(true);
     }
 
     @Override
@@ -99,9 +105,11 @@ public class SingleDeviceOperActivity extends CustomBaseActivity implements Radi
                 transaction.show(deviceDetailFragment);
                 break;
             case R.id.single_deviceoper_position_rb:
+                devicePositionFragment.setShowPosition(true);
                 transaction.show(devicePositionFragment);
                 break;
             case R.id.single_deviceoper_trace_rb:
+                devicePositionFragment.setShowPosition(false);
                 transaction.show(devicePositionFragment);
                 break;
             case R.id.single_deviceoper_setting_rb:
@@ -114,5 +122,42 @@ public class SingleDeviceOperActivity extends CustomBaseActivity implements Radi
     @Override
     protected void afterRestoreInstanceState(Bundle bundle) {
         onCheckedChanged(null, radioGroup.getCheckedRadioButtonId() == -1 ? selectId : radioGroup.getCheckedRadioButtonId());
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+        if (radioGroup.getCheckedRadioButtonId() == R.id.single_deviceoper_trace_rb) {
+            menu.add(0, 0, 0, menuTime == null ? "" : menuTime);
+            menu.getItem(0).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+            menu.add(0, 1, 0, "");
+            menu.getItem(1).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+            menu.getItem(1).setIcon(R.mipmap.icon_time);
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (radioGroup.getCheckedRadioButtonId() == R.id.single_deviceoper_trace_rb) {
+            switch (item.getItemId()) {
+                case 0:
+                    devicePositionFragment.showTraceDay();
+                    break;
+                case 1:
+                    devicePositionFragment.showTraceTime();
+                    break;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void forReceiverResult(Intent intent) {
+        if (intent.getBooleanExtra(Contant.BroadcastKey.SINGLEDEVICE_MENU_REFRESH, false)) {
+            menuTime = intent.getStringExtra(Contant.BroadcastKey.SINGLEDEVICE_MENU_TIME);
+            invalidateOptionsMenu();
+        }
     }
 }

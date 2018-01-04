@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.aioute.carloan.R;
@@ -63,7 +64,7 @@ public class MainActivity extends CustomBaseActivity implements RadioGroup.OnChe
 
         transaction.commit();
 
-        onCheckedChanged(null, selectId = R.id.main_main_rb);
+        ((RadioButton) findViewById(selectId = R.id.main_main_rb)).setChecked(true);
     }
 
     @Override

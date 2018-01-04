@@ -9,21 +9,21 @@
         android:id="@+id/my_account_tv"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:background="@color/colorAccent"
+        android:drawableLeft="@mipmap/user_pic_header"
+        android:drawablePadding="10dp"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/activity_padding_leftright"
         android:textColor="@color/colorWhiteText"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:drawableHeight="70dp"
-        android:drawablePadding="10dp"
-        android:background="@color/colorAccent"
         app:drawableWidth="70dp" />
 
     <cn.sft.view.AlwaysMarqueeTextView
         android:id="@+id/my_about_tv"
         style="@style/My_TextView"
-        android:drawableLeft="@mipmap/ic_launcher_round"
-        android:drawableRight="@mipmap/ic_launcher_round"
+        android:drawableLeft="@mipmap/user_icon_star"
+        android:drawableRight="@mipmap/user_icon_right"
         android:text="@string/about" />
 
     <include layout="@layout/devider_gray_match" />
@@ -31,8 +31,8 @@
     <cn.sft.view.AlwaysMarqueeTextView
         android:id="@+id/my_setting_tv"
         style="@style/My_TextView"
-        android:drawableLeft="@mipmap/ic_launcher_round"
-        android:drawableRight="@mipmap/ic_launcher_round"
+        android:drawableLeft="@mipmap/user_icon_set"
+        android:drawableRight="@mipmap/user_icon_right"
         android:text="@string/setting" />
 
     <include layout="@layout/devider_gray_match" />
@@ -40,8 +40,8 @@
     <cn.sft.view.AlwaysMarqueeTextView
         android:id="@+id/my_phone_tv"
         style="@style/My_TextView"
-        android:drawableLeft="@mipmap/ic_launcher_round"
-        android:drawableRight="@mipmap/ic_launcher_round"
+        android:drawableLeft="@mipmap/user_icon_phone"
+        android:drawableRight="@mipmap/user_icon_right"
         android:text="@string/change_phone" />
 
     <include layout="@layout/devider_gray_match" />
@@ -53,7 +53,7 @@
         android:layout_marginLeft="@dimen/activity_padding_leftright"
         android:layout_marginRight="@dimen/activity_padding_leftright"
         android:layout_marginTop="16dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/shape_red_btn"
         android:text="@string/exit" />
 
 </LinearLayout>

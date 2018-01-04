@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.aioute.carloan.R;
 import com.aioute.carloan.bean.TaskBean;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -35,14 +34,16 @@ public class PhotoVerifyAdapter extends BaseAdapter {
 
         ImageView headPicIM = view.findViewById(R.id.photoverify_headpic_im);
         TextView senderTimeTV = view.findViewById(R.id.photoverify_time_tv);
+        TextView noPhotoTV = view.findViewById(R.id.photoverify_days_tv);
         AlwaysMarqueeTextView plateTV = view.findViewById(R.id.photoverify_plate_tv);
         AlwaysMarqueeTextView positionTV = view.findViewById(R.id.photoverify_position_tv);
 
         final TaskBean taskBean = (TaskBean) getObjcet(position);
 
-        senderTimeTV.setText(String.format(context.getString(R.string.sender), "18562172893"));
+        senderTimeTV.setText(String.format(context.getString(R.string.principal_time), "18562172893", "2017-10-12 10:10:20"));
+        noPhotoTV.setText(String.format(context.getString(R.string.days_no_photo), "2"));
         plateTV.setText(String.format(context.getString(R.string.plate), "鲁F123456"));
         positionTV.setText("莱山区" + position);
-        Glide.with(context).load(R.mipmap.ic_launcher_round).into(headPicIM);
+//        Glide.with(context).load(R.mipmap.ic_launcher_round).into(headPicIM);
     }
 }

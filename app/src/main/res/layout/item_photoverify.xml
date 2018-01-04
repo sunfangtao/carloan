@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorWhite"
-    android:paddingBottom="20dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/activity_padding_leftright"
         android:paddingRight="@dimen/activity_padding_leftright">
@@ -17,54 +17,58 @@
         <ImageView
             android:id="@+id/photoverify_headpic_im"
             android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/pic_user_header" />
 
         <TextView
             android:id="@+id/photoverify_time_tv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:singleLine="true" />
+            android:gravity="center_vertical" />
 
         <TextView
             android:id="@+id/photoverify_days_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_orange"
             android:gravity="center_vertical"
-            android:background="@color/colorAccent"
-            android:text="2017-01-12" />
+            android:singleLine="false"
+            android:text="2017-01-12"
+            android:textColor="@color/colorWhiteText" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGray"
-        android:paddingLeft="50dp"
+        android:background="@color/colorLightGray"
         android:orientation="vertical"
         android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/activity_padding_leftright"
         android:paddingTop="10dp">
 
         <cn.sft.view.AlwaysMarqueeTextView
             android:id="@+id/photoverify_plate_tv"
             android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:drawableLeft="@mipmap/icon_photo_car"
+            android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:drawableLeft="@mipmap/ic_launcher_round"
-            app:drawableHeight="20dp"
-            app:drawableWidth="20dp" />
+            app:drawableHeight="15dp"
+            app:drawableWidth="15dp" />
 
         <cn.sft.view.AlwaysMarqueeTextView
             android:id="@+id/photoverify_position_tv"
             android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:drawableLeft="@mipmap/icon_photo_map"
+            android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:layout_marginTop="5dp"
-            android:drawableLeft="@mipmap/ic_launcher_round"
-            app:drawableHeight="20dp"
-            app:drawableWidth="20dp" />
+            app:drawableHeight="15dp"
+            app:drawableWidth="15dp" />
     </LinearLayout>
 
 </LinearLayout>

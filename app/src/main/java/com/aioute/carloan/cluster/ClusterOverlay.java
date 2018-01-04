@@ -3,6 +3,7 @@ package com.aioute.carloan.cluster;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -30,6 +31,8 @@ import com.amap.api.maps.model.animation.Animation;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.sft.util.Util;
 
 
 /**
@@ -100,14 +103,14 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
         assignClusters();
     }
 
-    public void setClusterItems(List<ClusterItem> clusterItems){
+    public void setClusterItems(List<ClusterItem> clusterItems) {
         mClusterItems.addAll(clusterItems);
         mPXInMeters = mAMap.getScalePerPixel();
         mClusterDistance = mPXInMeters * mClusterSize;
         assignClusters();
     }
 
-    public void setOnMapChagnedListener(MapChangedListener listenr){
+    public void setOnMapChagnedListener(MapChangedListener listenr) {
         this.mapChangedListener = listenr;
     }
 
@@ -173,7 +176,7 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
         mClusterDistance = mPXInMeters * mClusterSize;
         assignClusters();
 
-        if(this.mapChangedListener !=null){
+        if (this.mapChangedListener != null) {
             this.mapChangedListener.onCameraChangeFinish(arg0);
         }
     }
@@ -233,7 +236,37 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
             ImageView statusImg = markerView.findViewById(R.id.marker_img);
             TextView deviceNumTV = markerView.findViewById(R.id.marker_title_tv);
 
-            deviceNumTV.setText(cluster.getClusterItems().get(0).getTitle());
+            int index  = 1;
+            GradientDrawable drawable1 = new GradientDrawable();
+            int strokeColor = Color.parseColor("#616161");
+            int fillColor = Color.parseColor("#838383");
+            int resourceId = R.mipmap.car_gray;
+            String title = cluster.getClusterItems().get(0).getTitle();
+            switch (index) {
+                case 0:
+                    // 离线
+                    break;
+                case 1:
+                    // 长期未行驶
+                    strokeColor = Color.parseColor("#D83806");
+                    fillColor = Color.parseColor("#FF0000");
+                    resourceId = R.mipmap.car_red;
+                    break;
+                case 2:
+                    // 正常
+                    strokeColor = Color.parseColor("#03A964");
+                    fillColor = Color.parseColor("#45BE37");
+                    resourceId = R.mipmap.car_green;
+                    break;
+            }
+            drawable1.setColor(fillColor);
+            drawable1.setStroke(Util.dp2px(mContext, 1), strokeColor);
+            drawable1.setShape(GradientDrawable.RECTANGLE);
+            drawable1.setCornerRadius(10);
+            statusImg.setBackgroundResource(resourceId);
+            deviceNumTV.setText(title);
+            deviceNumTV.setBackgroundDrawable(drawable1);
+
             Bitmap bitmap = MapUtil.convertViewToBitmap(markerView);
             markerOptions.anchor(25f / bitmap.getWidth(), 1)
                     .position(latlng)

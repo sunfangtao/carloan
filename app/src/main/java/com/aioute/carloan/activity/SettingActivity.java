@@ -103,7 +103,7 @@ public class SettingActivity extends CustomBaseActivity {
      * @return
      */
     String getFormatRefreshTime() {
-        return "<customfont size='13sp' color='#00a65a'>%1$s</customfont><br><customfont size='10sp' color='#666666'>%2$s</customfont>";
+        return "<customfont size='13sp' color='#616161'>%1$s</customfont><br><customfont size='10sp' color='#838383'>%2$s</customfont>";
     }
 
 }

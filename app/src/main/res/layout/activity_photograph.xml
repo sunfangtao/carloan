@@ -9,7 +9,7 @@
     <RadioGroup
         android:id="@+id/photograph_rg"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/tabHeight"
         android:orientation="horizontal">
 
         <cn.sft.view.DrawableCenterRadioButton

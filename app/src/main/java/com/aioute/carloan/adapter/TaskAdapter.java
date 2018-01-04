@@ -12,7 +12,6 @@ import com.aioute.carloan.R;
 import com.aioute.carloan.activity.TaskActivity_;
 import com.aioute.carloan.bean.TaskBean;
 import com.aioute.carloan.common.Contant;
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -53,7 +52,7 @@ public class TaskAdapter extends BaseAdapter {
         senderTV.setText(String.format(context.getString(R.string.sender), "18562172893"));
         plateTV.setText(String.format(context.getString(R.string.plate), "鲁F123456"));
         positionTV.setHtmlText("莱山区" + taskBean.getNumber());
-        Glide.with(context).load(R.mipmap.ic_launcher_round).into(headPicIM);
+//        Glide.with(context).load(R.mipmap.ic_launcher_round).into(headPicIM);
         sendTimeTV.setText("2017-12-14 10:22:22");
 
         operateLayout.setVisibility(View.VISIBLE);

@@ -1,6 +1,7 @@
 package com.aioute.carloan.view;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -51,8 +52,8 @@ public class WarnCarCountTextView extends android.support.v7.widget.AppCompatTex
         int innerWidth = Util.dp2px(getContext(), 15) + outerWidth;
 
         GradientDrawable drawable1 = new GradientDrawable();
-        drawable1.setColor(getResources().getColor(R.color.colorAccent));
-        drawable1.setStroke(outerWidth, getResources().getColor(R.color.colorGray));
+        drawable1.setColor(Color.parseColor("#C4E4F1"));
+        drawable1.setStroke(outerWidth, Color.parseColor("#EAECEB"));
         drawable1.setShape(GradientDrawable.OVAL);
 
         float sweepAngle = 0;
@@ -66,7 +67,7 @@ public class WarnCarCountTextView extends android.support.v7.widget.AppCompatTex
 
         GradientDrawable drawable3 = new GradientDrawable();
         drawable3.setColor(getResources().getColor(R.color.colorWhite));
-        drawable3.setStroke(outerWidth, getResources().getColor(R.color.colorGray));
+        drawable3.setStroke(outerWidth, Color.parseColor("#EAECEB"));
         drawable3.setShape(GradientDrawable.OVAL);
 
         LayerDrawable ld = new LayerDrawable(new Drawable[]{drawable1, drawable2, drawable3});
@@ -74,8 +75,8 @@ public class WarnCarCountTextView extends android.support.v7.widget.AppCompatTex
         ld.setLayerInset(2, innerWidth, innerWidth, innerWidth, innerWidth);
         setBackgroundDrawable(ld);
 
-        String text = "<customfont size='20sp' color='#00a65a'>" + count
-                + "</customfont><br><customfont size='10sp' color='#666666'>报警车辆</customfont>";
+        String text = "<customfont size='20sp' color='#01A9F2'>" + count
+                + "</customfont><br><customfont size='12sp' color='#404040'>报警车辆</customfont>";
 
         CharSequence charSequence = Html.fromHtml("<default>" + text.toString() + "</default>",
                 null, new FontSizeTagHandler(getContext()));

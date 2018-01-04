@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorWhite"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_padding_leftright"
-    android:paddingRight="@dimen/activity_padding_leftright"
-    android:orientation="vertical">
+    android:paddingRight="@dimen/activity_padding_leftright">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/item_photograph_untreated_headpic_im"
-            android:layout_width="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical"
-            android:layout_height="40dp" />
+            android:src="@mipmap/pic_user_header" />
 
         <TextView
             android:id="@+id/item_photograph_untreated_sender_tv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/sender_time" />
@@ -32,8 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="粤BGSADE"
-            android:textColor="@color/colorBlueText" />
+            android:textColor="@color/colorBlueText"
+            tools:text="粤BGSADE" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -47,10 +50,11 @@
         android:id="@+id/item_photograph_untreated_location_tv"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:drawableLeft="@mipmap/ic_launcher"
+        android:drawableLeft="@mipmap/icon_photo_map"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:text="拍照位置："
+        android:text="@string/takephoto_position"
+        android:textColor="@color/colorLightGrayText"
         android:textSize="14sp"
         app:drawableHeight="20dp"
         app:drawableWidth="20dp" />
@@ -59,33 +63,38 @@
         android:id="@+id/item_photograph_untreated_address_check_tv"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:drawableLeft="@mipmap/ic_launcher"
+        android:drawableLeft="@drawable/takephoto_position_ck_bk"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:text="位置信息："
+        android:textColor="@drawable/takephoto_position_ck_textcolor"
         app:drawableHeight="20dp"
         app:drawableWidth="20dp" />
 
     <RelativeLayout
         android:id="@+id/task_operate_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right">
+        android:layout_height="55dp"
+        android:layout_gravity="right"
+        android:gravity="center_vertical">
 
         <Button
             android:id="@+id/item_photograph_untreated_confirm_btn"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/item_photograph_procressed_btn"
-            android:text="@string/confirm" />
+            android:background="@drawable/shape_write_btn"
+            android:text="@string/confirm"
+            android:textColor="@color/colorBlackText" />
 
         <Button
             android:id="@+id/item_photograph_procressed_btn"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
             android:layout_alignParentRight="true"
-            android:text="@string/again_photograph" />
+            android:background="@drawable/shape_write_btn"
+            android:text="@string/again_photograph"
+            android:textColor="@color/colorBlackText" />
 
     </RelativeLayout>
 

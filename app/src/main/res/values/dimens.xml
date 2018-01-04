@@ -1,10 +1,13 @@
 <resources>
     <dimen name="activity_padding_leftright">16dp</dimen>
     <dimen name="dropDownVerticalOffset">0dp</dimen>
-    <!--<dimen name="toolbarTitleTextSize">28sp</dimen>-->
+    <dimen name="toolbarTitleTextSize">18sp</dimen>
     <!--<dimen name="toolbarMenuTextSize">28sp</dimen>-->
     <!--<dimen name="toolbarPopupMenuTextSize">28dp</dimen>-->
 
-    <dimen name="mainProgressLayoutDeviderHeight">10dp</dimen>
+    <dimen name="mainProgressLayoutDeviderHeight">8dp</dimen>
     <dimen name="infoWindowWidth">240dp</dimen>
+    <dimen name="shapeBtnLeftRightPadding">8dp</dimen>
+    <dimen name="shapeBtnTopBottomPadding">5dp</dimen>
+    <dimen name="tabHeight">45dp</dimen>
 </resources>

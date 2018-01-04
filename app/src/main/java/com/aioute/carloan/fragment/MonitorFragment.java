@@ -1,6 +1,7 @@
 package com.aioute.carloan.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -85,16 +86,22 @@ public class MonitorFragment extends CustomBaseFragment implements MapChangedLis
         ClusterRender render = new ClusterRender() {
             @Override
             public Drawable getDrawable(int clusterNum) {
-                return null;
+                int strokeColor = Color.parseColor("#03A964");
+                int fillColor = Color.parseColor("#45BE37");
+                GradientDrawable drawable = new GradientDrawable();
+                drawable.setColor(fillColor);
+                drawable.setStroke(Util.dp2px(getActivity(), 1), strokeColor);
+                drawable.setShape(GradientDrawable.RECTANGLE);
+                drawable.setCornerRadius(100);
+
+                return drawable;
             }
         };
         mClusterOverlay = new ClusterOverlay(mapView.getMap(), Util.dp2px(getActivity(), 50), getActivity());
         mClusterOverlay.setOnClusterClickListener(this);
         mClusterOverlay.setOnMapChagnedListener(this);
-//        mClusterOverlay.setClusterRenderer(render);
+        mClusterOverlay.setClusterRenderer(render);
         mClusterOverlay.setClusterItems(items);
-
-        Util.print("afterViews");
     }
 
     /**

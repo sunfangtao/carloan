@@ -24,26 +24,26 @@
         <cn.sft.view.DrawableCenterRadioButton
             android:id="@+id/single_deviceoper_detail_rb"
             style="@style/Main_RadioButton"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:text="@string/main_page" />
+            android:drawableTop="@drawable/tab_info_bk"
+            android:text="@string/info" />
 
         <cn.sft.view.DrawableCenterRadioButton
             android:id="@+id/single_deviceoper_position_rb"
             style="@style/Main_RadioButton"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:text="@string/monitor" />
+            android:drawableTop="@drawable/tab_location_bk"
+            android:text="@string/trace" />
 
         <cn.sft.view.DrawableCenterRadioButton
             android:id="@+id/single_deviceoper_trace_rb"
             style="@style/Main_RadioButton"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:text="@string/my" />
+            android:drawableTop="@drawable/tab_back_bk"
+            android:text="@string/history_view" />
 
         <cn.sft.view.DrawableCenterRadioButton
             android:id="@+id/single_deviceoper_setting_rb"
             style="@style/Main_RadioButton"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:text="@string/my" />
+            android:drawableTop="@drawable/tab_set_bk"
+            android:text="@string/setting" />
 
     </RadioGroup>
 

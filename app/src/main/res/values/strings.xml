@@ -51,13 +51,28 @@
     <string name="processed">已处理(%1$d)</string>
     <string name="no_photo">未拍照(%1$d)</string>
     <string name="has_photo">已拍照(%1$d)</string>
-    <string name="sender_time">发送人：%1$s\n上传时间：%2$s</string>
+    <string name="sender_time">发送人：%1$s%n时间：%2$s</string>
+    <string name="principal_time">负责人：%1$s%n%2$s</string>
+    <string name="account_group">账号：%1$s%n%n所属组：%2$s</string>
+    <string name="days_no_photo">%1$s天未拍照</string>
     <string name="again_photograph">请重拍</string>
     <string name="confige_device">配置设备</string>
     <string name="history_trace">历史轨迹</string>
     <string name="realtime_position">实时跟踪</string>
     <string name="device_detail">设备详情</string>
     <string name="navigation">导航</string>
+    <string name="photo">拍照</string>
+    <string name="takephoto_position">拍照位置：%1$s</string>
+    <string name="takephoto_position_ok">位置信息一致</string>
+    <string name="takephoto_position_notice">位置信息不一致</string>
+    <string name="input_search_content">请输入搜索内容</string>
+    <string name="device_intro_info">设备号：%1$s%n设备类型：%2$s%n设备状态：%3$s%n所属分组：%4$s</string>
+    <string name="current_device_warn">当前设备报警信息</string>
+    <string name="relative_car">关联车辆：%1$s</string>
+    <string name="remove_device">拆除设备</string>
+    <string name="info">信息</string>
+    <string name="trace">追踪</string>
+    <string name="history_view">回放</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>
@@ -65,6 +80,13 @@
         <item>1分钟</item>
         <item>3分钟</item>
         <item>5分钟</item>
+    </string-array>
+
+    <string-array name="trace_time_array">
+        <item>今天</item>
+        <item>昨天</item>
+        <item>近7天</item>
+        <item>自定义</item>
     </string-array>
 
     <string-array name="warn_style_array">

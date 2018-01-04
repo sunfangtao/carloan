@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/marker_img"
-        android:layout_width="25dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_vertical"
         android:background="@mipmap/ic_launcher_round" />
 
@@ -17,9 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="5dp"
-        android:padding="5dp"
-        android:background="@color/colorAccent"
+        android:layout_marginLeft="2dp"
+        android:padding="3dp"
+        android:textSize="12sp"
         android:textColor="@color/colorWhiteText"
         tools:text="027029841562(无线)" />
 </LinearLayout>

@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <!--<color name="activityBackground">#FF0000</color>-->
+    <color name="colorPrimary">#01A9F2</color>
+    <color name="colorPrimaryDark">#036592</color>
+    <color name="colorAccent">#01A9F2</color>
+    <color name="activityBackground">#F5F5F5</color>
     <!--<color name="toolbarColorTitle">#000000</color>-->
     <!--<color name="toolbarColorMenu">#000000</color>-->
     <!--<color name="toolbarColorPopupMenu">#000000</color>-->
 
     <color name="colorWhiteText">#FFFFFF</color>
-    <color name="colorGrayText">#666666</color>
-    <color name="colorBlackText">#333333</color>
-    <color name="colorRedText">#FF0000</color>
-    <color name="colorBlueText">#3366EE</color>
+    <color name="colorGrayText">#616161</color>
+    <color name="colorLightGrayText">#838383</color>
+    <color name="colorBlackText">#404040</color>
+    <color name="colorRedText">#FF523E</color>
+    <color name="colorBlueText">#2FB0FF</color>
     <!--========================================-->
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorDeepGray">#666666</color>
-    <color name="colorGray">#D7D7D7</color>
-    <color name="colorTransGray">#99D7D7D7</color>
-    <color name="colorTransBlue">#993366EE</color>
+    <color name="colorTransWhite">#99FFFFFF</color>
+    <color name="colorDeepGray">#616161</color>
+    <color name="colorGray">#838383</color>
+    <color name="colorTransGray">#DD838383</color>
+    <color name="colorLightGray">#DDDDDD</color>
+    <color name="colorBlue">#04AAF6</color>
+    <color name="colorTransBlue">#DD04AAF6</color>
+    <color name="colorRed">#FF523E</color>
+    <color name="colorTransRed">#4DFF523E</color>
+    <color name="colorOrange">#FE7D55</color>
 </resources>

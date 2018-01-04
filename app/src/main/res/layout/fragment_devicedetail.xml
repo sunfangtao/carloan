@@ -1,40 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <cn.sft.view.AlwaysMarqueeTextView
-        android:id="@+id/devicedetail_tv"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/colorAccent"
-        android:drawableLeft="@mipmap/ic_launcher_round"
-        android:drawablePadding="10dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/activity_padding_leftright"
-        android:textColor="@color/colorWhiteText"
-        android:textSize="14sp"
-        app:drawableHeight="70dp"
-        app:drawableWidth="70dp" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/devicedetail_rv"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGray"
-        android:overScrollMode="never"
-        android:scrollbars="none" />
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_padding_leftright">
 
-    <Button
-        android:id="@+id/devicedetail_btn"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="@dimen/activity_padding_leftright"
-        android:layout_marginRight="@dimen/activity_padding_leftright"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorAccent"
-        android:text="@string/exit" />
+        <cn.sft.view.AlwaysMarqueeTextView
+            android:id="@+id/devicedetail_tv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorWhite"
+            android:drawableLeft="@mipmap/ic_launcher_round"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/activity_padding_leftright"
+            android:textColor="@color/colorBlackText"
+            android:textSize="14sp"
+            app:drawableHeight="70dp"
+            app:drawableWidth="70dp" />
 
-</LinearLayout>
+        <include layout="@layout/devider_gray_match"/>
+
+        <cn.sft.view.AlwaysMarqueeTextView
+            android:id="@+id/devicewarn_tv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhite"
+            android:drawableRight="@mipmap/user_icon_right"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/activity_padding_leftright"
+            android:text="@string/current_device_warn"
+            android:textColor="@color/colorBlueText"
+            android:textSize="14sp"
+            app:drawableHeight="20dp"
+            app:drawableWidth="20dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/devicedetail_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <cn.sft.view.AlwaysMarqueeTextView
+            android:id="@+id/devicecar_tv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhite"
+            android:drawableRight="@mipmap/user_icon_right"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/activity_padding_leftright"
+            android:text="@string/relative_car"
+            android:textColor="@color/colorBlueText"
+            android:textSize="14sp"
+            app:drawableHeight="20dp"
+            app:drawableWidth="20dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/devicecar_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <Button
+            android:id="@+id/devicedetail_btn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@dimen/activity_padding_leftright"
+            android:layout_marginRight="@dimen/activity_padding_leftright"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_red_btn"
+            android:text="@string/remove_device" />
+
+    </LinearLayout>
+</ScrollView>

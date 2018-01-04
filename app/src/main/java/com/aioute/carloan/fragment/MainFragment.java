@@ -78,14 +78,13 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
     protected void afterViews() {
         departmentTV.setText("测试");
         updateDeviceTypeCount(0, 0, 0, 0);
-
         initUI();
     }
 
     void initUI() {
         // departmentTV 添加背景
         GradientDrawable drawable = new GradientDrawable();
-        drawable.setColor(Color.parseColor("#FF0000"));
+        drawable.setColor(Color.parseColor("#4BC0F2"));
         drawable.setCornerRadius(50);
         drawable.setShape(GradientDrawable.RECTANGLE);
         departmentTV.setBackgroundDrawable(drawable);
@@ -115,38 +114,38 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
         // 设备列表
         MainFunctionModel mainFunctionModel = new MainFunctionModel();
         mainFunctionModel.setTitle(getString(R.string.device_list));
-        mainFunctionModel.setDrawableId(R.mipmap.ic_launcher_round);
+        mainFunctionModel.setDrawableId(R.mipmap.home_icon_device);
         mainFunctionModelList.add(mainFunctionModel);
 
         // 预约拆机
         mainFunctionModel = new MainFunctionModel();
         mainFunctionModel.setTitle(getString(R.string.appointment_unpack));
-        mainFunctionModel.setDrawableId(R.mipmap.ic_launcher_round);
+        mainFunctionModel.setDrawableId(R.mipmap.home_icon_remove);
         mainFunctionModelList.add(mainFunctionModel);
 
         // 报警信息
         mainFunctionModel = new MainFunctionModel();
         mainFunctionModel.setTitle(getString(R.string.warn_info));
-        mainFunctionModel.setDrawableId(R.mipmap.ic_launcher_round);
+        mainFunctionModel.setDrawableId(R.mipmap.home_icom_warn);
         mainFunctionModel.setBadge("0");
         mainFunctionModelList.add(mainFunctionModel);
 
         // 现场拍照
         mainFunctionModel = new MainFunctionModel();
         mainFunctionModel.setTitle(getString(R.string.onsite_photo));
-        mainFunctionModel.setDrawableId(R.mipmap.ic_launcher_round);
+        mainFunctionModel.setDrawableId(R.mipmap.home_icon_photo);
         mainFunctionModelList.add(mainFunctionModel);
 
         // 我的任务
         mainFunctionModel = new MainFunctionModel();
         mainFunctionModel.setTitle(getString(R.string.my_tasks));
-        mainFunctionModel.setDrawableId(R.mipmap.ic_launcher_round);
+        mainFunctionModel.setDrawableId(R.mipmap.home_icon_task);
         mainFunctionModelList.add(mainFunctionModel);
 
         // 保留功能
         mainFunctionModel = new MainFunctionModel();
         mainFunctionModel.setTitle(getString(R.string.coming_soon));
-        mainFunctionModel.setDrawableId(R.mipmap.ic_launcher_round);
+        mainFunctionModel.setDrawableId(R.mipmap.home_icon_more);
         mainFunctionModelList.add(mainFunctionModel);
 
         mAdapter.notifyDataSetChanged();
@@ -164,25 +163,25 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
         GradientDrawable p = new GradientDrawable();
         p.setCornerRadius(cornerRadius);
 
-        p.setColor(Color.parseColor("#FF0000"));
+        p.setColor(Color.parseColor("#FF366D"));
         ClipDrawable offlineCD = new ClipDrawable(p, Gravity.LEFT, ClipDrawable.HORIZONTAL);
         LayerDrawable offlineLD = new LayerDrawable(new Drawable[]{background, offlineCD});
         offlinePB.setProgressDrawable(offlineLD);
         updateOfflinePBAndValue(0, 0);
 
-        p.setColor(Color.parseColor("#FFFF00"));
+        p.setColor(Color.parseColor("#FFDA1E"));
         ClipDrawable noTravelCD = new ClipDrawable(p, Gravity.LEFT, ClipDrawable.HORIZONTAL);
         LayerDrawable noTravelLD = new LayerDrawable(new Drawable[]{background, noTravelCD});
         noTravelPB.setProgressDrawable(noTravelLD);
         updateNoTravelPBAndValue(0, 0);
 
-        p.setColor(Color.parseColor("#00FF00"));
+        p.setColor(Color.parseColor("#FF6E47"));
         ClipDrawable electricCD = new ClipDrawable(p, Gravity.LEFT, ClipDrawable.HORIZONTAL);
         LayerDrawable electricLD = new LayerDrawable(new Drawable[]{background, electricCD});
         electricPB.setProgressDrawable(electricLD);
         updateBrokeElectricPBAndValue(0, 0);
 
-        p.setColor(Color.parseColor("#0000FF"));
+        p.setColor(Color.parseColor("#AAD100"));
         ClipDrawable railCD = new ClipDrawable(p, Gravity.LEFT, ClipDrawable.HORIZONTAL);
         LayerDrawable railLD = new LayerDrawable(new Drawable[]{background, railCD});
         railPB.setProgressDrawable(railLD);

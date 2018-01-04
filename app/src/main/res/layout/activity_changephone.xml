@@ -29,7 +29,7 @@
         android:layout_marginLeft="@dimen/activity_padding_leftright"
         android:layout_marginRight="@dimen/activity_padding_leftright"
         android:layout_marginTop="20dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/shape_red_btn"
         android:text="@string/change_phone" />
 
 </LinearLayout>

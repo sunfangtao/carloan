@@ -16,7 +16,6 @@ import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
 import com.aioute.carloan.bean.PhotographBean;
 import com.aioute.carloan.common.Contant;
 import com.aioute.carloan.util.PicUtil;
-import com.bumptech.glide.Glide;
 import com.flysand.ninegrid.ImageInfo;
 
 import java.util.ArrayList;
@@ -83,11 +82,13 @@ public class PhotographUntreatedAdapter extends BaseAdapter {
         }
 
         //头像
-        Glide.with(context).load(R.mipmap.ic_launcher).into(headpicIv);
+//        Glide.with(context).load(R.mipmap.ic_launcher).into(headpicIv);
         senderTv.setText(String.format(context.getString(R.string.sender_time), "哈哈", "2017-12-01 12:12:14"));
         plateTv.setText("鲁F123456");
-        locationTv.setText("拍照位置");
-        addressCheckTv.setText("位置信息一致");
+        locationTv.setText(String.format(context.getString(R.string.takephoto_position), "asdfaf"));
+        addressCheckTv.setEnabled(false);
+//        addressCheckTv.setText(context.getString(R.string.takephoto_position_ok));
+        addressCheckTv.setText(context.getString(R.string.takephoto_position_notice));
 
         adapter.setItemClickListener(new RecyclerViewItemClickListener() {
             @Override

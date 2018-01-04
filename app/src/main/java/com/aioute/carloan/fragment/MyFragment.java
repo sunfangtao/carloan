@@ -26,7 +26,7 @@ public class MyFragment extends CustomBaseFragment {
 
     @Override
     protected void afterViews() {
-
+        updateAccountData("18562172893", "hha");
     }
 
     /**
@@ -36,9 +36,11 @@ public class MyFragment extends CustomBaseFragment {
      * @param group   分组
      */
     void updateAccountData(String account, String group) {
-        String text = "<customfont size='20sp' color='#00a65a'>账号：18562172893"
-                + "</customfont><br><br><customfont size='10sp' color='#666666'>所属组：</customfont>";
-        accountTV.setHtmlText(String.format(text, account, group));
+        accountTV.setSingleLine(false);
+        accountTV.setText(String.format(getString(R.string.account_group), account, group));
+//        String text = "<customfont size='20sp' color='#00a65a'>账号：18562172893"
+//                + "</customfont><br><br><customfont size='10sp' color='#666666'>所属组：</customfont>";
+//        accountTV.setHtmlText(String.format(text, account, group));
     }
 
     @Click(R.id.my_about_tv)
