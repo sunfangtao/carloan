@@ -1,6 +1,7 @@
 package com.aioute.carloan.cluster;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -8,14 +9,21 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.LruCache;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aioute.carloan.R;
+import com.aioute.carloan.activity.MainActivity_;
+import com.aioute.carloan.adapter.InfoWindowAdapter;
+import com.aioute.carloan.bean.UserBean;
+import com.aioute.carloan.common.Contant;
 import com.aioute.carloan.util.MapUtil;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.AMapUtils;
@@ -39,7 +47,7 @@ import cn.sft.util.Util;
  * Created by yiyi.qi on 16/10/10.
  * 整体设计采用了两个线程,一个线程用于计算组织聚合数据,一个线程负责处理Marker相关操作
  */
-public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarkerClickListener {
+public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarkerClickListener, AMap.InfoWindowAdapter, AMap.OnMapClickListener {
     private AMap mAMap;
     private Context mContext;
     private List<ClusterItem> mClusterItems;
@@ -57,6 +65,8 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
     private Handler mSignClusterHandler;
     private float mPXInMeters;
     private boolean mIsCanceled = false;
+
+    private Marker currentMarker;
 
     /**
      * 构造函数
@@ -99,6 +109,8 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
         mClusterDistance = mPXInMeters * mClusterSize;
         amap.setOnCameraChangeListener(this);
         amap.setOnMarkerClickListener(this);
+        amap.setOnMapClickListener(this);
+        amap.setInfoWindowAdapter(this);
         initThreadHandler();
         assignClusters();
     }
@@ -154,6 +166,8 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
             marker.remove();
         }
         mAddMarkers.clear();
+        if (currentMarker != null)
+            currentMarker.remove();
         mLruCache.evictAll();
     }
 
@@ -184,15 +198,113 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
     //点击事件
     @Override
     public boolean onMarkerClick(Marker marker) {
-        if (mClusterClickListener == null) {
-            return true;
-        }
         Cluster cluster = (Cluster) marker.getObject();
         if (cluster != null) {
-            mClusterClickListener.onClick(marker, cluster.getClusterItems());
-            return true;
+            if (cluster.getClusterItems().size() == 1) {
+                // 只有一个点，点击显示详情的InfoWindow
+                currentMarker = marker;
+                currentMarker.showInfoWindow();
+            }
+            if (mClusterClickListener != null) {
+                mClusterClickListener.onClick(marker, cluster.getClusterItems());
+            }
         }
-        return false;
+        return true;
+    }
+
+    /**
+     * 关闭InfoWindow
+     */
+    void closeInfoWindow() {
+        if (currentMarker != null && currentMarker.isInfoWindowShown()) {
+            currentMarker.hideInfoWindow();
+//            currentMarker = null;
+        }
+    }
+
+    @Override
+    public View getInfoWindow(Marker marker) {
+        View infoWindow = LayoutInflater.from(mContext).inflate(R.layout.marker_infowindow, null);
+        render(marker, infoWindow);
+        return infoWindow;
+    }
+
+    @Override
+    public View getInfoContents(Marker marker) {
+        View infoWindow = LayoutInflater.from(mContext).inflate(R.layout.marker_infowindow, null);
+        render(marker, infoWindow);
+        return infoWindow;
+    }
+
+    /**
+     * 自定义infowinfow窗口
+     */
+    void render(Marker marker, View view) {
+        List deviceDataList = new ArrayList<>();
+        deviceDataList.add("1111111111111111111111111111111111111111111111111111111");
+        deviceDataList.add(marker.getTitle());
+        deviceDataList.add("1");
+        deviceDataList.add("1");
+        deviceDataList.add("1");
+        deviceDataList.add("1");
+        deviceDataList.add("1");
+        deviceDataList.add("1");
+        deviceDataList.add("1");
+
+        InfoWindowAdapter infoWindowAdapter = new InfoWindowAdapter(mContext, deviceDataList);
+        RecyclerView recyclerView = view.findViewById(R.id.infowindow_rv);
+        recyclerView.setLayoutManager(new GridLayoutManager(mContext, 1));
+        recyclerView.setAdapter(infoWindowAdapter);
+
+        view.findViewById(R.id.infowindow_detail_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.sendBroadcast(new Intent(MainActivity_.class.getName())
+                        .putExtra(Contant.BroadcastKey.INFOWINDOW_CLICK, true)
+                        .putExtra(Contant.BroadcastKey.POSITION, 0)
+                        // TODO 设备对象传递
+                        .putExtra(Contant.BroadcastKey.BEAN, new UserBean()));
+            }
+        });
+
+        view.findViewById(R.id.infowindow_position_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.sendBroadcast(new Intent(MainActivity_.class.getName())
+                        .putExtra(Contant.BroadcastKey.INFOWINDOW_CLICK, true)
+                        .putExtra(Contant.BroadcastKey.POSITION, 1)
+                        // TODO 设备对象传递
+                        .putExtra(Contant.BroadcastKey.BEAN, new UserBean()));
+            }
+        });
+
+        view.findViewById(R.id.infowindow_trace_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.sendBroadcast(new Intent(MainActivity_.class.getName())
+                        .putExtra(Contant.BroadcastKey.INFOWINDOW_CLICK, true)
+                        .putExtra(Contant.BroadcastKey.POSITION, 2)
+                        // TODO 设备对象传递
+                        .putExtra(Contant.BroadcastKey.BEAN, new UserBean()));
+            }
+        });
+
+        view.findViewById(R.id.infowindow_setting_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.sendBroadcast(new Intent(MainActivity_.class.getName())
+                        .putExtra(Contant.BroadcastKey.INFOWINDOW_CLICK, true)
+                        .putExtra(Contant.BroadcastKey.POSITION, 3)
+                        // TODO 设备对象传递
+                        .putExtra(Contant.BroadcastKey.BEAN, new UserBean()));
+            }
+        });
+
+    }
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+        closeInfoWindow();
     }
 
 
@@ -200,9 +312,12 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
      * 将聚合元素添加至地图上
      */
     private void addClusterToMap(List<Cluster> clusters) {
-
         ArrayList<Marker> removeMarkers = new ArrayList<>();
         removeMarkers.addAll(mAddMarkers);
+        if (removeMarkers.contains(currentMarker) && currentMarker.isInfoWindowShown()) {
+            // 显示InfoWindow的Marker不参与点聚合，继续显示InfoWindow,不移除
+            removeMarkers.remove(currentMarker);
+        }
         AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
         MyAnimationListener myAnimationListener = new MyAnimationListener(removeMarkers);
         for (Marker marker : removeMarkers) {
@@ -210,10 +325,12 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
             marker.setAnimationListener(myAnimationListener);
             marker.startAnimation();
         }
+        mAddMarkers.clear();
 
         for (Cluster cluster : clusters) {
             addSingleClusterToMap(cluster);
         }
+
     }
 
     private AlphaAnimation mADDAnimation = new AlphaAnimation(0, 1);
@@ -226,7 +343,9 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
     private void addSingleClusterToMap(Cluster cluster) {
         LatLng latlng = cluster.getCenterLatLng();
         MarkerOptions markerOptions = new MarkerOptions();
+
         int sum = cluster.getClusterCount();
+
         if (sum > 1) {
             // 聚合显示
             markerOptions.anchor(0.5f, 0.5f).icon(getBitmapForCluster(cluster)).position(latlng);
@@ -236,7 +355,7 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
             ImageView statusImg = markerView.findViewById(R.id.marker_img);
             TextView deviceNumTV = markerView.findViewById(R.id.marker_title_tv);
 
-            int index  = 1;
+            int index = 1;
             GradientDrawable drawable1 = new GradientDrawable();
             int strokeColor = Color.parseColor("#616161");
             int fillColor = Color.parseColor("#838383");
@@ -290,6 +409,19 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
             if (mIsCanceled) {
                 return;
             }
+            if (currentMarker != null && currentMarker.isInfoWindowShown()) {
+                Cluster cluster = (Cluster) currentMarker.getObject();
+                if (cluster != null && cluster.getClusterCount() == 1) {
+                    if (cluster.getClusterItems().get(0).equals(clusterItem)) {
+                        continue;
+                    }
+                }
+            }
+
+            if (currentMarker != null && !currentMarker.isInfoWindowShown()) {
+                currentMarker.remove();
+            }
+
             // 第一个点作为聚合的中心点
             LatLng latlng = clusterItem.getPosition();
             if (visibleBounds.contains(latlng)) {
@@ -307,6 +439,7 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
         //复制一份数据，规避同步
         List<Cluster> clusters = new ArrayList<Cluster>();
         clusters.addAll(mClusters);
+
         Message message = Message.obtain();
         message.what = MarkerHandler.ADD_CLUSTER_LIST;
         message.obj = clusters;
@@ -381,13 +514,17 @@ public class ClusterOverlay implements AMap.OnCameraChangeListener, AMap.OnMarke
         BitmapDescriptor bitmapDescriptor = mLruCache.get(num);
         if (bitmapDescriptor == null) {
             TextView textView = new TextView(mContext);
-            String tile = String.valueOf(num);
-            textView.setText(tile);
+            String title = String.valueOf(num);
+            textView.setText(title);
+            int padding = Util.dp2px(mContext, 5);
+            textView.setPadding(padding, padding, padding, padding);
+            textView.setMinWidth(Util.dp2px(mContext, 30));
+            textView.setMinHeight(Util.dp2px(mContext, 30));
             textView.setGravity(Gravity.CENTER);
             textView.setTextColor(Color.BLACK);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-            if (mClusterRender != null && mClusterRender.getDrawable(num) != null) {
-                textView.setBackgroundDrawable(mClusterRender.getDrawable(num));
+            if (mClusterRender != null && mClusterRender.getDrawable(cluster) != null) {
+                textView.setBackgroundDrawable(mClusterRender.getDrawable(cluster));
             } else {
                 textView.setBackgroundResource(R.mipmap.ic_launcher_round);
             }

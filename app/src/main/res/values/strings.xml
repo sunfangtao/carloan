@@ -73,6 +73,7 @@
     <string name="info">信息</string>
     <string name="trace">追踪</string>
     <string name="history_view">回放</string>
+    <string name="trace_end_tip">播放完毕，本次共播放%1$d个点</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

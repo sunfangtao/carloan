@@ -10,12 +10,11 @@ import com.aioute.carloan.R;
 import java.util.List;
 
 import cn.sft.base.adapter.BaseAdapter;
-import cn.sft.base.fragment.BaseFragment;
 
 public class InfoWindowAdapter extends BaseAdapter {
 
-    public InfoWindowAdapter(Context context, BaseFragment fragment, List<String> list) {
-        super(context, fragment, list);
+    public InfoWindowAdapter(Context context, List<String> list) {
+        super(context, list);
     }
 
     @Override

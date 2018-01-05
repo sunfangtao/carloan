@@ -117,6 +117,8 @@ public class SingleDeviceOperActivity extends CustomBaseActivity implements Radi
                 break;
         }
         transaction.commit();
+
+        updateToolbarMenu("");
     }
 
     @Override
@@ -156,8 +158,17 @@ public class SingleDeviceOperActivity extends CustomBaseActivity implements Radi
     @Override
     public void forReceiverResult(Intent intent) {
         if (intent.getBooleanExtra(Contant.BroadcastKey.SINGLEDEVICE_MENU_REFRESH, false)) {
-            menuTime = intent.getStringExtra(Contant.BroadcastKey.SINGLEDEVICE_MENU_TIME);
-            invalidateOptionsMenu();
+            updateToolbarMenu(intent.getStringExtra(Contant.BroadcastKey.SINGLEDEVICE_MENU_TIME));
         }
+    }
+
+    /**
+     * 刷新轨迹日期Menu
+     *
+     * @param menuTime
+     */
+    void updateToolbarMenu(String menuTime) {
+        this.menuTime = menuTime;
+        invalidateOptionsMenu();
     }
 }

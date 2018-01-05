@@ -47,6 +47,9 @@
         <activity
             android:name=".activity.PhotographActivity_"
             android:label="已拍照" />
+        <activity
+            android:name=".activity.UnpackActivity_"
+            android:label="预约拆机" />
         <activity android:name=".activity.CarInfoActivity_" />
         <activity android:name=".base.CustomBaseActivity_" />
 

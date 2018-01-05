@@ -34,4 +34,16 @@ public class RegionItemBean extends DBVO implements ClusterItem {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof RegionItemBean) {
+            RegionItemBean bean = (RegionItemBean) obj;
+            if (bean.mTitle.equals(mTitle) && bean.mLatLng.latitude == mLatLng.latitude
+                    && bean.mLatLng.longitude == mLatLng.longitude) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
