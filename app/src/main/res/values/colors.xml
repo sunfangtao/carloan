@@ -15,6 +15,7 @@
     <color name="colorRedText">#FF523E</color>
     <color name="colorBlueText">#2FB0FF</color>
     <!--========================================-->
+    <color name="colorTransPrimary">#4C01A9F2</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTransWhite">#99FFFFFF</color>
     <color name="colorDeepGray">#616161</color>

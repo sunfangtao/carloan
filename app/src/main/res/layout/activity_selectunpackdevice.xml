@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.AboutActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <cn.sft.view.AlwaysMarqueeTextView
+        android:id="@+id/selectunpackdevice_tv"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:drawableLeft="@mipmap/ic_launcher_round"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright"
+        app:drawableHeight="40dp"
+        app:drawableWidth="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright"
+        android:text="@string/relative_device"
+        android:textColor="@color/colorBlackText"
+        android:textSize="14sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/selectunpackdevice_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright"
+        android:scrollbars="none" />
+
+    <Spinner
+        android:id="@+id/selectunpackdevice_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null" />
+
+    <Button
+        android:id="@+id/selectunpackdevice_btn"
+        style="@style/Button"
+        android:layout_marginLeft="@dimen/activity_padding_leftright"
+        android:layout_marginRight="@dimen/activity_padding_leftright"
+        android:layout_marginTop="20dp"
+        android:text="@string/commit" />
+
+</LinearLayout>

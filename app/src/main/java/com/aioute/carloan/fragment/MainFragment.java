@@ -14,8 +14,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aioute.carloan.R;
+import com.aioute.carloan.activity.DeviceListActivity_;
 import com.aioute.carloan.activity.PhotoVerifyActivity_;
 import com.aioute.carloan.activity.TaskActivity_;
+import com.aioute.carloan.activity.UnpackActivity_;
 import com.aioute.carloan.adapter.MainFunctionAdapter;
 import com.aioute.carloan.adapter.decoration.RecyclerViewItemDecoration;
 import com.aioute.carloan.base.CustomBaseFragment;
@@ -308,8 +310,12 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
     public void onRecyclerViewItemClick(BaseAdapter baseAdapter, View view, int index) {
         switch (index) {
             case 0:
+                // 设备列表
+                DeviceListActivity_.intent(this).start();
                 break;
             case 1:
+                // 预约拆机
+                UnpackActivity_.intent(getActivity()).start();
                 break;
             case 2:
                 break;

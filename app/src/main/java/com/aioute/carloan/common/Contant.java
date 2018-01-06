@@ -45,7 +45,14 @@ public class Contant {
         public static final String TASK_ITEM_PHOTO = "taskItemPhoto";
         public static final String TASK_ITEM_NAV = "taskItemNav";
 
+        public static final String UNPACK_ITEM_OPEN_CANCEL = "unpackItemOpenCancel";
+        public static final String UNPACK_ITEM_TIP = "unpackItemTip";
+        public static final String UNPACK_ITEM_RECEIVED_CANCEL = "unpackItemReceivedTip";
+        public static final String UNPACK_ITEM_PHONE = "unpackItemPhone";
+
         public static final String INFOWINDOW_CLICK = "infoWindowClick";
+
+        public static final String OBTAIN_NAME_BY_PLATE = "obtainNameByPlate";
 
         public static final String POSITION = "position";
         public static final String BEAN = "bean";

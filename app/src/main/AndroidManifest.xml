@@ -50,6 +50,15 @@
         <activity
             android:name=".activity.UnpackActivity_"
             android:label="预约拆机" />
+        <activity
+            android:name=".activity.AppointmentActivity_"
+            android:label="预约拆机" />
+        <activity
+            android:name=".activity.SelectUnpackDeviceActivity_"
+            android:label="@string/select_unpack_device" />
+        <activity
+            android:name=".activity.DeviceListActivity_"
+            android:label="" />
         <activity android:name=".activity.CarInfoActivity_" />
         <activity android:name=".base.CustomBaseActivity_" />
 

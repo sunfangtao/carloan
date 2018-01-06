@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.AboutActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <RadioGroup
+        android:id="@+id/devicelist_rg"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/devicelist_all_rb"
+            style="@style/DeviceList_RadioBUtton"
+            android:text="@string/all" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/devicelist_online_rb"
+            style="@style/DeviceList_RadioBUtton"
+            android:text="@string/online" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/devicelist_offline_rb"
+            style="@style/DeviceList_RadioBUtton"
+            android:text="@string/offline" />
+
+        <cn.sft.view.DrawableCenterRadioButton
+            android:id="@+id/devicelist_warn_rb"
+            style="@style/DeviceList_RadioBUtton"
+            android:text="@string/warn" />
+
+    </RadioGroup>
+
+    <include layout="@layout/devider_gray_match"/>
+
+    <cn.sft.view.DropDownMenu
+        android:id="@+id/devicelist_ddm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dddividerColor="@color/gray"
+        app:ddmaskColor="@color/mask_color"
+        app:ddmenuBackgroundColor="@color/white"
+        app:ddmenuTabMinWidth="70dp"
+        app:ddmenuTabWrapContent="true"
+        app:ddmenuTextSize="13sp"
+        app:ddtextSelectedColor="@color/drop_down_selected"
+        app:ddtextUnselectedColor="@color/drop_down_unselected"
+        app:ddunderlineColor="@color/gray" />
+
+</LinearLayout>

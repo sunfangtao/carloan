@@ -9,27 +9,27 @@
     <include layout="@layout/toolbar" />
 
     <RadioGroup
-        android:id="@+id/unpage_rg"
+        android:id="@+id/unpack_rg"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tabHeight"
         android:orientation="horizontal">
 
         <cn.sft.view.DrawableCenterRadioButton
-            android:id="@+id/unpage_inprogress_rb"
+            android:id="@+id/unpack_open_rb"
             style="@style/Task_RadioBUtton"
-            android:text="@string/default_fill" />
+            android:text="@string/open_order" />
 
         <cn.sft.view.DrawableCenterRadioButton
-            android:id="@+id/unpage_finish_rb"
+            android:id="@+id/unpack_receiver_rb"
             style="@style/Task_RadioBUtton"
-            android:text="@string/default_fill" />
+            android:text="@string/received_order" />
 
     </RadioGroup>
 
     <include layout="@layout/devider_gray_match"/>
 
     <FrameLayout
-        android:id="@+id/unpage_contain_layout"
+        android:id="@+id/unpack_contain_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">

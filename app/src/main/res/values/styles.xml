@@ -123,6 +123,12 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="DeviceList_RadioBUtton" parent="Main_RadioButton">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@drawable/radiobtn_textcolor</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="My_TextView" parent="TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">45dp</item>

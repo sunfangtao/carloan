@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_padding_leftright">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/pic_user_header" />
+
+        <TextView
+            android:id="@+id/unpack_plate_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/colorBlueText"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/unpacke_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:text="待接单" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/unpack_devicenum_time_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:minHeight="50dp" />
+
+    <RelativeLayout
+        android:id="@+id/task_operate_layout"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/unpack_cancel_btn"
+            style="@style/Item_Button"
+            android:layout_alignParentRight="true"
+            android:text="@string/cancel_order" />
+
+        <Button
+            android:id="@+id/unpack_tip_btn"
+            style="@style/Item_Button"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/unpack_cancel_btn"
+            android:text="@string/tip_order" />
+
+    </RelativeLayout>
+
+</LinearLayout>

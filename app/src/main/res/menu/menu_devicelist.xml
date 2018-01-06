@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sft.buglistenermanager.activity.MainActivity">
+    <item
+        android:id="@+id/action_devicelist_search"
+        android:icon="@mipmap/ic_launcher_round"
+        android:imeOptions="actionSearch"
+        android:inputType="textCapWords"
+        android:title=""
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_devicelist_reset"
+        android:title="重置"
+        app:showAsAction="always" />
+</menu>

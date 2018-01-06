@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/colorWhite"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/activity_padding_leftright"
+    android:paddingRight="@dimen/activity_padding_leftright">
+
+    <TextView
+        android:id="@+id/item_appointment_label_tv"
+        android:layout_width="100dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlackText"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/item_appointment_et"
+        android:layout_width="match_parent"
+        android:background="@null"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical" />
+</LinearLayout>

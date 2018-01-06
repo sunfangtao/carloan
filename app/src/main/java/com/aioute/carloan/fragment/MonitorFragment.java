@@ -29,6 +29,7 @@ import org.androidannotations.annotations.ViewById;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
 
 import static com.aioute.carloan.common.Contant.MAP_MAX_ZOOM_LEVEL;
@@ -59,6 +60,8 @@ public class MonitorFragment extends CustomBaseFragment implements MapChangedLis
 
     @Override
     protected void afterViews() {
+
+        Util.print("afterViews");
         initSearchView();
 
         List<ClusterItem> items = new ArrayList<ClusterItem>();
@@ -133,7 +136,13 @@ public class MonitorFragment extends CustomBaseFragment implements MapChangedLis
     @Override
     public void onResume() {
         super.onResume();
-        mapView.onResume();
+        new MyHandler(5000){
+            @Override
+            public void run() {
+                mapView.onResume();
+            }
+        };
+        Util.print("onResume");
     }
 
     @Override

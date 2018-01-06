@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.aioute.carloan.activity.AboutActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <cn.sft.view.DefaultNullRecyclerView
+        android:id="@+id/appointment_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <Button
+        android:id="@+id/appointment_btn"
+        style="@style/Button"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/activity_padding_leftright"
+        android:paddingRight="@dimen/activity_padding_leftright"
+        android:text="@string/next" />
+</LinearLayout>

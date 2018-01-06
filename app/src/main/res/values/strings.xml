@@ -74,6 +74,20 @@
     <string name="trace">追踪</string>
     <string name="history_view">回放</string>
     <string name="trace_end_tip">播放完毕，本次共播放%1$d个点</string>
+    <string name="cancel_order">取消订单</string>
+    <string name="tip_order">提醒订单</string>
+    <string name="open_order">待接订单</string>
+    <string name="received_order">已接订单</string>
+    <string name="appointment">预约</string>
+    <string name="next">下一步</string>
+    <string name="select_unpack_device">选择拆除设备</string>
+    <string name="commit">提交</string>
+    <string name="relative_device">关联设备</string>
+    <string name="device_name">拆机车辆：%1$s %2$4s</string>
+    <string name="all">全部(%1$d)</string>
+    <string name="online">在线(%1$d)</string>
+    <string name="offline">离线(%1$d)</string>
+    <string name="warn">报警(%1$d)</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>

@@ -9,7 +9,6 @@ import org.androidannotations.annotations.EActivity;
 
 @EActivity
 public class CustomBaseActivity extends cn.sft.base.activity.DefaultResponseParseActivity {
-
     @AfterViews
     protected void afterViews() {
 
