@@ -88,6 +88,11 @@
     <string name="online">在线(%1$d)</string>
     <string name="offline">离线(%1$d)</string>
     <string name="warn">报警(%1$d)</string>
+    <string name="state">状态</string>
+    <string name="group">分组</string>
+    <string name="type">类型</string>
+    <string name="time">时间</string>
+    <string name="group_leaf_detail">%1$s %2$8s %n%3$s(%4$s)</string>
 
     <string-array name="setting_refresh_time">
         <item>10秒</item>
@@ -105,7 +110,7 @@
     </string-array>
 
     <string-array name="warn_style_array">
-        <item>低点报警</item>
+        <item>低电报警</item>
         <item>断电报警</item>
         <item>超速报警</item>
         <item>离省报警</item>
@@ -121,4 +126,10 @@
         <item>关机报警</item>
     </string-array>
 
+    <string-array name="warn_status_array">
+        <item>全部</item>
+        <item>未处理</item>
+        <item>已处理</item>
+        <item>已恢复</item>
+    </string-array>
 </resources>

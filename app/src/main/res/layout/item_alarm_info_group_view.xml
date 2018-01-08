@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/item_alarm_info_cb"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/item_alarm_info_plate_number_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="鲁1SSDs" />
+
+    <TextView
+        android:id="@+id/item_alarm_info_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/colorAccent"
+        tools:text="拆机报警" />
+
+    <TextView
+        android:id="@+id/item_alarm_info_state_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorGrayText"
+        tools:text="已恢复" />
+
+    <TextView
+        android:id="@+id/item_alarm_info_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorGrayText"
+        tools:text="10天前" />
+
+
+</LinearLayout>

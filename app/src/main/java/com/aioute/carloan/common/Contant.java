@@ -30,6 +30,16 @@ public class Contant {
         // public static final String LAST_LOGIN_USER_ACCOUND = "lastLoginUserAccount";
     }
 
+    public static final class RequestCodeKey {
+         public static final int WARN = 0;
+        public static final int TIME = 1;
+        public static final int GROUP = 2;
+    }
+
+    public static final class IntentKey {
+        public static final String BEAN = "bean";
+    }
+
     public static final class BroadcastKey {
         public static final String SINGLEDEVICE_MENU_REFRESH = "singleDeviceMenuRefresh";
         public static final String SINGLEDEVICE_MENU_TIME = "singleDeviceMenuTime";

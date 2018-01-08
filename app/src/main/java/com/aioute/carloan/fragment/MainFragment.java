@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aioute.carloan.R;
+import com.aioute.carloan.activity.AlarmInfoActivity_;
 import com.aioute.carloan.activity.DeviceListActivity_;
 import com.aioute.carloan.activity.PhotoVerifyActivity_;
 import com.aioute.carloan.activity.TaskActivity_;
@@ -311,13 +312,15 @@ public class MainFragment extends CustomBaseFragment implements RecyclerViewItem
         switch (index) {
             case 0:
                 // 设备列表
-                DeviceListActivity_.intent(this).start();
+                DeviceListActivity_.intent(getActivity()).start();
                 break;
             case 1:
                 // 预约拆机
                 UnpackActivity_.intent(getActivity()).start();
                 break;
             case 2:
+                // 报警列表
+                AlarmInfoActivity_.intent(getActivity()).start();
                 break;
             case 3:
                 // 拍照检查

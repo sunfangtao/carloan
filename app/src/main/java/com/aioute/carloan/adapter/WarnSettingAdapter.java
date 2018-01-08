@@ -35,6 +35,10 @@ public class WarnSettingAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public Map<Integer, Boolean> getSelectMap(){
+        return selectMap;
+    }
+
     @Override
     public int onCreateViewLayoutID(int viewType) {
         return 0;

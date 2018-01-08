@@ -9,12 +9,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SearchView;
 
 import com.aioute.carloan.R;
+import com.aioute.carloan.adapter.GroupTreeAdapter;
 import com.aioute.carloan.base.CustomBaseActivity;
+import com.aioute.carloan.bean.GroupBean;
 
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
@@ -23,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.sft.base.adapter.ListDropDownAdapter;
+import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
-import cn.sft.view.DefaultNullRecyclerView;
 import cn.sft.view.DropDownMenu;
 
 /**
@@ -54,6 +57,8 @@ public class DeviceListActivity extends CustomBaseActivity {
     DropDownMenu dropDownMenu;
 
     //
+    ListView groupLV;
+    //
     RecyclerView deviceTypeRV;
     //
     RecyclerView groupNameRV;
@@ -62,6 +67,8 @@ public class DeviceListActivity extends CustomBaseActivity {
     List<String> deviceTypeList;
     // 分组名称
     List<String> groupNameList;
+    // 设备分组列表
+    List<GroupBean> deviceGroupList;
 
     @Override
     protected void afterViews() {
@@ -154,14 +161,44 @@ public class DeviceListActivity extends CustomBaseActivity {
         popupViews.add(deviceTypeRV);
         popupViews.add(groupNameRV);
 
-        DefaultNullRecyclerView recyclerView = new DefaultNullRecyclerView(this);
-        recyclerView.setAdapter(new ListDropDownAdapter(this, new ArrayList<String>()));
+        groupLV = new ListView(this);
+        groupLV.setAdapter(new GroupTreeAdapter(this, deviceGroupList = new ArrayList<>(), 0));
 
         dropDownMenu.setTabTexts(headers);
         dropDownMenu.setPopupViews(popupViews);
-        dropDownMenu.setContentView(recyclerView);
+        dropDownMenu.setContentView(groupLV);
 
         dropDownMenu.show();
+
+        new MyHandler(2000){
+            @Override
+            public void run() {
+                initGroup();
+            }
+        };
+
+    }
+
+    void initGroup() {
+        GroupBean bean = null;
+        for (int i = 1; i < 10; i++) {
+            bean = new GroupBean();
+            bean.setId(i + "");
+            deviceGroupList.add(bean);
+            for (int j = i * 10 + 1; j < i * 10 + 6; j++) {
+                bean = new GroupBean();
+                bean.setId(j + "");
+                bean.setpId(i + "");
+                deviceGroupList.add(bean);
+                for (int m = j * 10 + 1; m < j * 10 + 6; m++) {
+                    bean = new GroupBean();
+                    bean.setId(m + "");
+                    bean.setpId(j + "");
+                    deviceGroupList.add(bean);
+                }
+            }
+        }
+        ((GroupTreeAdapter) groupLV.getAdapter()).notifyDataSetChanged();
     }
 
     /**

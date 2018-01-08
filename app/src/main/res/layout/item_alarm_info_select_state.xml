@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/colorGray"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/item_alarm_info_select_state_iv"
+        android:layout_width="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/item_alarm_info_select_state_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        tools:text="dfdf" />
+
+</LinearLayout>

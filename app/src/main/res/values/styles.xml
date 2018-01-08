@@ -160,4 +160,13 @@
         <item name="android:background">@drawable/shape_write_btn</item>
         <item name="android:textColor">@color/colorBlackText</item>
     </style>
+
+    <style name="AlarmInfoStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorBlackText</item>
+        <item name="android:drawableRight">@mipmap/icon_down_warn</item>
+    </style>
 </resources>

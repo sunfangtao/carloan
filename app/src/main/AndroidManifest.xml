@@ -60,6 +60,9 @@
             android:name=".activity.DeviceListActivity_"
             android:label="" />
         <activity android:name=".activity.CarInfoActivity_" />
+        <activity android:name=".activity.AlarmInfoActivity_" />
+        <activity android:name=".activity.SelectTimeActivity_" />
+        <activity android:name=".activity.AlarmTypeActivity_" />
         <activity android:name=".base.CustomBaseActivity_" />
 
         <!-- 开启高德地图的定位服务 -->
