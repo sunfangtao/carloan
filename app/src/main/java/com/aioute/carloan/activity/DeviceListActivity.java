@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.sft.base.adapter.ListDropDownAdapter;
-import cn.sft.util.MyHandler;
 import cn.sft.util.Util;
 import cn.sft.view.DropDownMenu;
 
@@ -170,12 +169,7 @@ public class DeviceListActivity extends CustomBaseActivity {
 
         dropDownMenu.show();
 
-        new MyHandler(2000){
-            @Override
-            public void run() {
-                initGroup();
-            }
-        };
+        initGroup();
 
     }
 
@@ -184,6 +178,7 @@ public class DeviceListActivity extends CustomBaseActivity {
         for (int i = 1; i < 10; i++) {
             bean = new GroupBean();
             bean.setId(i + "");
+            bean.setpId("0");
             deviceGroupList.add(bean);
             for (int j = i * 10 + 1; j < i * 10 + 6; j++) {
                 bean = new GroupBean();
@@ -198,7 +193,7 @@ public class DeviceListActivity extends CustomBaseActivity {
                 }
             }
         }
-        ((GroupTreeAdapter) groupLV.getAdapter()).notifyDataSetChanged();
+        ((GroupTreeAdapter) groupLV.getAdapter()).addDataAll(deviceGroupList, 0);
     }
 
     /**
